@@ -5,9 +5,7 @@ export default function Layout(props) {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-
-      <main className="flex-1" style={{background: "white"}}>{props.children}</main>
-
+      <main className="relative flex-1 bg-f1f1f3">{props.children}</main>
       <Footer />
     </div>
   )

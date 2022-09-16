@@ -7,24 +7,25 @@ import ToggleBox from './navbar/toggleBox'
 export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
   const [connectWalletButton, setConnectWalletButton] = useState(false)
-  useEffect(()=> {
-    window.addEventListener('resize', ()=> {
-        console.log( window.innerWidth)
-        if( window.innerWidth > 640){
-          setMobileMenuIsOpen(false);
-        }
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      console.log(window.innerWidth)
+      if (window.innerWidth > 640) {
+        setMobileMenuIsOpen(false);
+      }
     })
   }, []);
   const dropWalletBox = () => {
-    if(connectWalletButton){;
-      return <ToggleBox/>;
+    if (connectWalletButton) {
+      ;
+      return <ToggleBox />;
     }
   }
   console.log(connectWalletButton);
- 
+
   return (
-    <navbar style={{ background : "#2b2d3c", borderBottom: "solid #494D66 1px"}}>
-      <div className='flex flex-wrap items-center justify-between mt-2 sm:px-12 md:px-28 '>
+    <navbar style={{ background: "#2b2d3c", borderBottom: "solid #494D66 1px" }}>
+      <div className='flex flex-wrap items-center justify-between mt-2 sm:px-12 md:px-28 xs:px-0'>
         <div>
           <Link href='/'>
             <Image
@@ -75,18 +76,18 @@ export default function Header() {
           >
             <button
               type='button'
-              className='inline-flex items-center px-10 py-2 text-base font-medium text-white rounded-md shadow-sm' style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)"}}
-              onClick={ () => setConnectWalletButton(!connectWalletButton)} >
-              Connect Wallet{ dropWalletBox()}
+              className='inline-flex items-center px-10 py-2 text-base font-medium text-white rounded-md shadow-sm' style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}
+              onClick={() => setConnectWalletButton(!connectWalletButton)} >
+              Connect Wallet{dropWalletBox()}
             </button>
           </div>
         </ul>
         <button
           type='button'
           className='items-center hidden px-10 py-2 text-base font-medium text-white rounded-md shadow-sm md:inline-flex'
-         style={{position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)"}} onClick={ () => setConnectWalletButton(!connectWalletButton)}>
+          style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
           Connect Wallet
-          { dropWalletBox()} 
+          {dropWalletBox()}
         </button>
       </div>
     </navbar>

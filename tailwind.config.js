@@ -1,5 +1,5 @@
 module.exports = {
-theme: {
+  theme: {
     extend: {
       screens: {
         'xs': {
@@ -9,18 +9,21 @@ theme: {
       },
       colors: {
         'b-body': '#2b2d3c',
-        'b-blue': '#4F03FA',
-        'b-yellow': '#F3BA2F',
-        'b-pink': '#FC5596',
-        'b-gray': '#082640',
-        't-border': '#102D46'
+        'b-text': '#494d66',
+        'b-back': '#EDEEF2',
+        'b-border': '#cccccc',
+        'b-gray': '#808080',
+        't-border': '#102D46',
+        'b-delete': '#ff8080',
+        'f0f0f0': '#f0f0f0',
+        'f1f1f3': '#f1f1f3'
       },
       fontSize: {
         'tiny': '.6rem',
       }
     }
   },
-   purge: ["./components/**/*.js", "./pages/**/*.js"],
+  purge: ["./components/**/*.js", "./pages/**/*.js"],
   darkMode: false, // or 'media' or 'class'
 
   variants: {
