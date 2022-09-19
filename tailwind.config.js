@@ -63,7 +63,9 @@ module.exports = {
         '5c6080': '#5c6080',
         '42455c': '#42455c',
         '9296ae': '#9296ae',
-        'a0a5bf': '#A0A5BF'
+        'a0a5bf': '#A0A5BF',
+        '1d1d28': '#1d1d28',
+        '9b9b9b': '#9b9b9b'
       },
       fontSize: {
         'tiny': '.6rem',

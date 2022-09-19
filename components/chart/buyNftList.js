@@ -3,7 +3,7 @@ import BuyNftListItem from "./buyNFTListItem"
 const BuyNftList = () => {
     return (
         <>
-            <div className="absolute bottom-0 right-0 z-20 w-1/4 bg-37394c" style={{ height: "800px" }}>
+            <div className="absolute bottom-0 right-0 z-20 desktop:w-1/4 laptop:w-2/4 tablet:w-2/4 phone:hidden desktop:block tablet:block laptop:block bg-37394c" style={{ height: "800px" }}>
                 <div className="flex flex-row items-center justify-between p-8">
                     <p className="text-2xl text-white"> Buy 5 NFT's</p>
                     <p className="text-base text-9b9b9b">clear</p>
@@ -17,7 +17,7 @@ const BuyNftList = () => {
                     <BuyNftListItem />
                 </div>
             </div>
-            <div className="absolute bottom-0 right-0 z-30 flex flex-row items-center justify-between w-1/4 p-4 bg-white">
+            <div className="absolute bottom-0 right-0 z-30 flex-row items-center justify-between p-4 bg-white desktop:flex laptop:flex tablet:flex desktop:w-1/4 laptop:w-2/4 tablet:w-2/4 phone:hidden ">
                 <div className="flex flex-row items-baseline">
                     <img src='/charts/arrowright.svg' className="mr-2" />
                     <p className="text-b-text">Buy Total:</p>

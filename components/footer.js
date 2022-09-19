@@ -79,7 +79,7 @@ export default function Footer() {
   }
   return (
     <>
-      <section className='flex flex-wrap items-center justify-between'>
+      <section className='flex flex-wrap items-center justify-between px-4'>
         <div>
           <Link href='/'>
             <Image
@@ -93,7 +93,7 @@ export default function Footer() {
           </Link>
         </div>
         {drawUl()}
-        <button type='button' className='items-center hidden px-10 py-2 text-base font-medium text-white rounded-md shadow-sm md:inline-flex' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}>LAUNCH APP </button>
+        <button type='button' className='items-center px-10 py-2 font-medium text-white rounded-md shadow-sm md:inline-flex' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}>LAUNCH APP </button>
       </section>
     </>
   )

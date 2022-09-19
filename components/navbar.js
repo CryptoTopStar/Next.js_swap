@@ -86,7 +86,7 @@ export default function Header() {
           <ul className='absolute right-0 flex flex-col m-auto border-2 rounded top-12 menu-drop bg-b-body w-96 border-b-text'>
             <button
               type='button'
-              className='items-center px-10 py-2 m-auto mt-2 text-base font-medium text-white rounded-md shadow-sm'
+              className='items-center px-10 py-2 m-auto mt-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm'
               style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}>
               Launch App
             </button>
@@ -151,7 +151,7 @@ export default function Header() {
 
   return (
     <>
-      <navbar style={{ background: "#2b2d3c", borderBottom: "solid #494D66 1px", zIndex: "100" }} >
+      <navbar className style={{ background: "#2b2d3c", borderBottom: "solid #494D66 1px", zIndex: "100", paddingLeft: "16px" }} >
         <div className='flex flex-wrap items-center justify-between mr-2'>
           <div className='flex flex-row'>
             <div>
@@ -170,7 +170,7 @@ export default function Header() {
           </div>
           <button
             type='button'
-            className='items-center px-10 py-2 text-base font-medium text-white rounded-md shadow-sm'
+            className='items-center px-10 py-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm'
             style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
             Connect Wallet
             {dropWalletBox()}
