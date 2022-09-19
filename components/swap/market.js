@@ -24,15 +24,15 @@ const Market = () => {
         }
     }
     return (
-        <section className="px-6 py-4 sm:px-12 md:px-28 sm:py-12 md:py-3" style={{ background: "#2c2d3c" }}>
+        <section className="px-6 py-4" style={{ background: "#2c2d3c" }}>
             <div className="w-full mt-14">
-                <div className="relative flex flex-row items-center w-auto lg:mb-4 lg:mx-40 sm:mb-2 sm:mx-20" style={{ width: "fit-content" }}>
+                <div className="relative flex flex-row items-center w-auto mb-4 phone:mx-3 tablet:mx-40 laptop:mx-72 desktop:mx-96 " style={{ width: "fit-content" }}>
                     <img src={data[index].src} className="h-8 mr-3" />
-                    <p className="mr-3 text-xl text-white">{data[index].name} Market</p>
+                    <p className="mr-3 text-3xl text-white">{data[index].name} Market</p>
                     <img src="/swap/vector.svg" className="h-3 " onClick={() => setDropdownMarketType(!dropdownMarketType)} />
                     {marketModeldraw()}
                 </div>
-                <div className="flex flex-row items-center mb-4 lg:mx-40 sm:mx-20">
+                <div className="flex flex-row items-center mb-4 phone:mx-3 tablet:mx-40 laptop:mx-72 desktop:mx-96">
                     <img src="/swap/graph.svg" className="h-10 mr-3" />
                     <div className="flex flex-col">
                         <p style={{ color: "#6d7399" }}>Net Worth</p>

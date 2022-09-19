@@ -265,7 +265,7 @@ a {
   padding: 1em;
 }
 a{
-  border-bottom: solid #2b2d2c 2px
+  border-bottom: solid transparent 2px
 }
 a:hover{
   border-image: linear-gradient(to right, #F506FE , #06D6DF) 1;
@@ -282,9 +282,7 @@ a:hover{
 .modal { /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 30; /* Sit on top */
-  padding-top: 15%;
-  padding-left: 33%;
-  padding-right: 33%; /* Location of the box */
+  padding-top: 15%; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -296,9 +294,8 @@ a:hover{
 
 /* Modal Content */
 .modal-content {
-  margin-left: 10%;
+  margin:auto;
   align-content: center;
-  width: 80%;
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
@@ -318,7 +315,7 @@ a:hover{
   cursor: pointer;
 }
 .gradient_text {
-  background: -webkit-linear-gradient(#FA02FF, #06D6DF);
+  background: -webkit-linear-gradient( #FA02FF, #06D6DF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -336,14 +333,127 @@ a:hover{
   width: fit-content;
 }
 .swaplistitem:hover{
-  background-image: linear-gradient(90deg, rgba(250, 2, 255, 0.1) 0%, rgba(6, 214, 223, 0.1) 100%);
+  background-image: linear-gradient(to right, #fdbbfe, #b9f7f9);
 }
 .nftitem{
   border: solid 1px transparent;
-  border-radius: 8px;
+  border-radius: 4px;
   background-image: linear-gradient(white, white), 
                     linear-gradient(to right, #FA02FF, #06D6Df);
   background-origin: border-box;
   background-clip: content-box, border-box;
   box-shadow: 0px 4px 8px rgba(43, 45, 60, 0.1); 
+}
+/* .addressBox{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  background:linear-gradient(90deg, rgba(250, 2, 255, 0.1) 0%, rgba(6, 214, 223, 0.1) 101.18%);
+  margin: 5px;
+}
+.addressBox::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background-image: linear-gradient(to right, #FA02FF, #06D6Df);
+} */
+.addressBox {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #fdbbfe, #b9f7f9), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  justify-content: center;
+align-items: center;  
+}
+.nftButton{
+  border: solid 1px transparent;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, white, white), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  color:#6d7399;
+}
+.detailBox{
+  border: solid 1px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #f9cef9, #c8f5f6), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+}
+th,td{
+  padding: 10px;
+}
+.chartPageButton{
+  border-bottom: solid transparent 2px
+}
+.chartPageButton:hover{
+  border-image: linear-gradient(to right, #F506FE , #06D6DF) 1;
+
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #42455C;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2B2D3C; 
+}
+.nftGridButton:hover{
+  border: solid 1px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #5f6285, #5f6285), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.nftGridItem:hover{
+  border: solid 1px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #5f6285, #5f6285), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.mobileLi{
+  border: solid transparent 2px;
+  
+}
+.mobileLi:hover{
+  border-radius: 8px;
+  background-image: linear-gradient(#42455c, #42455c), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.mobileLi a:hover{
+  border:solid transparent 1px;
+
 }
