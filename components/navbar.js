@@ -63,7 +63,7 @@ export default function Header() {
       return (
         <button className='relative p-2 border-2 border-white rounded' onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           <svg
-            className='w-6 h-6 fill-current'
+            className='fill-current desktop:h-8 laptop:h-6 phone:h-4 tablet:h-6'
             viewBox='0 0 20 20'
             xmlns='http://www.w3.org/2000/svg'
           >
@@ -151,7 +151,7 @@ export default function Header() {
 
   return (
     <>
-      <navbar className style={{ background: "#2b2d3c", borderBottom: "solid #494D66 1px", zIndex: "100", paddingLeft: "16px" }} >
+      <navbar className='desktop:px-72 desktop:pr-72 laptop:px-8 laptop:pr-8 tablet:px-8 tablet:pr-8 phone:px-4 phone:pr-4' style={{ background: "#2b2d3c", borderBottom: "solid #494D66 1px", zIndex: "100" }} >
         <div className='flex flex-wrap items-center justify-between mr-2'>
           <div className='flex flex-row'>
             <div>
@@ -170,7 +170,7 @@ export default function Header() {
           </div>
           <button
             type='button'
-            className='items-center px-10 py-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm'
+            className='items-center px-10 py-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-tiny'
             style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
             Connect Wallet
             {dropWalletBox()}
