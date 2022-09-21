@@ -24,20 +24,18 @@ const Market = () => {
         }
     }
     return (
-        <section className="px-6 py-4" style={{ background: "#2c2d3c" }}>
-            <div className="w-full mt-14">
-                <div className="relative flex flex-row items-center w-auto mb-4 phone:mx-3 tablet:mx-40 laptop:mx-72 desktop:mx-96 " style={{ width: "fit-content" }}>
-                    <img src={data[index].src} className="h-8 mr-3" />
-                    <p className="mr-3 text-3xl text-white">{data[index].name} Market</p>
-                    <img src="/swap/vector.svg" className="h-3 " onClick={() => setDropdownMarketType(!dropdownMarketType)} />
-                    {marketModeldraw()}
-                </div>
-                <div className="flex flex-row items-center mb-4 phone:mx-3 tablet:mx-40 laptop:mx-72 desktop:mx-96">
-                    <img src="/swap/graph.svg" className="h-10 mr-3" />
-                    <div className="flex flex-col">
-                        <p style={{ color: "#6d7399" }}>Net Worth</p>
-                        <p style={{ color: "a3ade5", fontWeight: "bold" }}>0.0000000000000</p>
-                    </div>
+        <section className="" style={{ background: "#2c2d3c", width: "1440px", height: "270px", margin: "auto", marginTop: "0px", paddingTop: "60px" }}>
+            <div className="relative flex flex-row items-center" style={{ marginLeft: "290px", height: "28px", width: "fit-content" }} >
+                <img src={data[index].src} style={{ display: "inline-flex", height: "28px", marginRight: "8px" }} />
+                <p className="text-white" style={{ display: "inline-flex", fontSize: "32px" }} > {data[index].name} Market</p>
+                <img src="/swap/vector.svg" onClick={() => setDropdownMarketType(!dropdownMarketType)} style={{ display: "inline-flex", height: "9.6px", marginLeft: "15.6px" }} />
+                {marketModeldraw()}
+            </div>
+            <div className="flex flex-row" style={{ marginLeft: "290px", marginTop: "32px" }}>
+                <img src="/swap/graph.svg" style={{ height: "40px", marginRight: "8px" }} />
+                <div className="flex flex-col">
+                    <p style={{ color: "#6d7399", marginBottom: "4px", fontSize: "16px" }}>Net Worth</p>
+                    <p style={{ color: "#a3ade5", fontWeight: "bold" }}>0.0000000000000</p>
                 </div>
             </div>
             {drawBackground()}

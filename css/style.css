@@ -264,10 +264,13 @@ a {
   max-height: 100vh;
   padding: 1em;
 }
-a{
-  border-bottom: solid transparent 2px
+.navbar_li {
+  border-bottom: solid transparent 2px;
+  margin-left: 40px;
+  font-size: 14px;
+  padding:28px;
 }
-a:hover{
+.navbar_li:hover{
   border-image: linear-gradient(to right, #F506FE , #06D6DF) 1;
 }
 .individual_box:hover{

@@ -5,12 +5,12 @@ const data = [
 ]
 const MarketModel = (props) => {
     return (
-        <div className="absolute right-0 z-30 flex flex-col py-4 bg-white border-2 rounded-md top-8 mx">
+        <div className="absolute z-30 flex flex-col bg-white border-2 rounded-md" style={{ top: "35px", right: "0px", width: "194px", paddingTop: "16px" }}>
             {data.map((item, index) => {
                 return (
-                    <div onClick={() => props.itemClick(index)} className="flex flex-row items-center px-2 py-2 pr-6 mb-2 w-60 markettype" key={index}>
-                        <img className="h-8 mr-2" src={item.src} />
-                        <p className="text-xl text-b-body">{item.name}</p>
+                    <div onClick={() => props.itemClick(index)} className="flex flex-row items-center px-2 py-2 pr-6 mb-2 markettype" key={index}>
+                        <img src={item.src} style={{ height: "24px", marginRight: "8px" }} />
+                        <p className=" text-b-body" style={{ fontSize: "16px" }}>{item.name}</p>
                     </div>
                 )
             })}

@@ -1,16 +1,16 @@
 const SwapListItem = () => {
     return (
-        <div className="flex flex-row items-center w-full p-2 swaplistitem">
-            <div className="w-1/5 mr-2">
-                <img src="/swap/etherum.svg" className="w-3/4" /></div>
-            <div className="w-4/5">
-                <div className="flex flex-row justify-between desktop:mb-2 laptop:mb-1">
-                    <p className="text-b-body desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">Ether</p>
-                    <p className="text-b-gray desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">0.00212</p>
+        <div className="flex flex-row items-center w-full swaplistitem" style={{ marginBottom: "15px", padding: "8px 0px" }}>
+            <div className="">
+                <img src="/swap/etherum.svg" style={{ height: "24px", marginRight: "8px", marginLeft: "17px" }} /></div>
+            <div>
+                <div className="flex flex-row justify-between w-full">
+                    <p style={{ fontSize: "14px", marginRight: "42px", color: "#494d66" }}>Ether</p>
+                    <p style={{ fontSize: "14px", color: "#808080" }}>0.00212</p>
                 </div>
                 <div className="flex flex-row justify-between">
-                    <p className="text-b-gray desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">ETH</p>
-                    <p className="text-b-delete desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">delete</p>
+                    <p style={{ fontSize: "14px", marginRight: "42px", color: "#9296ae" }}>ETH</p>
+                    <p style={{ fontSize: "14px", color: "#ff8080" }}>delete</p>
                 </div>
             </div>
         </div>

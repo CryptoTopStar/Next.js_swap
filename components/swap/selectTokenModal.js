@@ -1,63 +1,67 @@
 import SwapListItem from "./swapListItem";
 const SelectTokenModal = (props) => {
     return (
-        <div className='absolute left-0 right-0 z-30 m-auto bg-white rounded desktop:w-1/3 top-16 laptop:w-1/3 tablet:w-7/12 phone:w-9/12' >
-            <div className="flex flex-row justify-between pr-2">
-                <p className="mx-6 my-6 desktop:text-2xl laptop:text-lg tablet:text-base phone:text-md text-b-text">Select Token</p>
-                <span onClick={() => props.selectTokenmodalHidden()} className="desktop:text-3xl laptop:text-xl tablet:text-lg phone:text-base close">&times;</span>
-            </div>
-            <div className="flex flex-row p-2">
-                <input type='text' className="w-full py-4 rounded-sm desktop:text-2xl desktop:px-14 laptop:px-12 tablet:px-8 phone:px-6 bg-b-back text-b-text" placeholder="Token search..." />
-                <img src='/swap/search.svg' className="absolute mt-4 desktop:mx-6 tablet:mx-2 laptop:mx-4 desktop:h-8 phone:mx-1 laptop:h-6 tablet:h-5 phone:h-5" />
-            </div>
-            <div className="flex flex-row p-2">
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">ETH</p>
+        <div className='absolute bg-white rounded-lg' style={{ left: "210px", top: "40px", zIndex: "30" }} >
+            <div className="relative" style={{ padding: "24px" }}>
+                <p className=" text-b-text" style={{ marginTop: "16px", fontSize: "24px" }}>SELECT TOKEN</p>
+                <div className="relative flex flex-row" style={{ marginTop: "22px" }}>
+                    <input type='text' className="w-full rounded-lg bg-b-back text-b-text" style={{ paddingLeft: "48px", paddingTop: "20px", paddingBottom: "20px" }} placeholder="Token search..." />
+                    <img src='/swap/search.svg' className="absolute" style={{ left: "19px", top: "22px", height: "18px", fontSize: "16px " }} />
                 </div>
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">DAI</p>
+                <div className="flex flex-row" style={{ marginTop: "24px" }}>
+                    <div className="flex flex-row items-center gradientBorderButton" style={{ marginRight: "8px", marginBottom: "12px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>ETH</p>
+                    </div>
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", marginBottom: "12px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>DAI</p>
+                    </div>
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", marginBottom: "12px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>USDC</p>
+                    </div>
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", marginBottom: "12px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>USDT</p>
+                    </div>
                 </div>
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">USDC</p>
+                <div className="flex flex-row">
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>ETH</p>
+                    </div>
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>DAI</p>
+                    </div>
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>USDC</p>
+                    </div>
+                    <div className="flex flex-row items-center rounded-lg" style={{ marginRight: "8px", border: "solid #cbc9cc 1px" }}>
+                        <img src='/swap/etherum.svg' style={{ marginLeft: "8px", marginTop: "8px", height: "16px", marginBottom: "8px", marginRight: "4px" }} />
+                        <p style={{ fontSize: "16px", color: "#494d66", fontWeight: "600", marginRight: "8px" }}>USDT</p>
+                    </div>
                 </div>
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">USDT</p>
-                </div>
-            </div>
-            <div className="flex flex-row p-2">
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">ETH</p>
-                </div>
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">DAI</p>
-                </div>
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">USDC</p>
-                </div>
-                <div className="flex flex-row items-center mr-2 gradientBorderButton">
-                    <img src='/swap/etherum.svg' className="mx-2 my-2 mr-2 desktop:h-6 laptop:h-4 tablet:h-3 phone:h-2" />
-                    <p className="mr-2 text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm">USDT</p>
-                </div>
+                <span onClick={() => props.selectTokenmodalHidden()} style={{ position: "absolute", top: "16px", right: "16px", fontSize: "24px" }} className="close">&times;</span>
             </div>
             <div className="flex flex-row ">
                 <div className="w-1/2 border-r-2 border-b-border">
-                    <p className="w-full py-2 text-center desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm text-b-body bg-b-back">SWAP LIST</p>
-                    <SwapListItem />
-                    <SwapListItem />
-                    <SwapListItem />
-                    <SwapListItem />
+                    <p className="w-full text-center text-b-body bg-b-back" style={{ fontSize: "16px", lineHeight: "32px" }}>SWAP LIST</p>
+                    <div style={{ marginTop: "16px" }}>
+                        <SwapListItem />
+                        <SwapListItem />
+                        <SwapListItem />
+                        <SwapListItem />
+                    </div>
                 </div>
                 <div className="w-1/2">
-                    <p className="w-full py-2 text-center desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm text-b-body bg-b-back">SAVED</p>
-                    <SwapListItem />
-                    <SwapListItem />
+                    <p className="w-full text-center text-b-body bg-b-back" style={{ fontSize: "16px", lineHeight: "32px" }}>SAVED</p>
+                    <div style={{ marginTop: "16px" }}>
+                        <SwapListItem />
+                        <SwapListItem />
+                    </div>
                 </div>
 
             </div>

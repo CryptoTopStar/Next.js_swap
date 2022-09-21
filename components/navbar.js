@@ -12,10 +12,10 @@ export default function Header() {
   useEffect(() => {
     window.addEventListener('resize', () => {
       console.log(window.innerWidth)
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth > 429) {
         setMobileMenuIsOpen(false);
       }
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 429) {
         setMobileMenuIsOpen(true);
       }
 
@@ -29,32 +29,37 @@ export default function Header() {
   const drawDesktopUl = () => {
     if (!mobileMenuIsOpen) {
       return (
-        <ul className='flex flex-row text-white'>
-          {[
-            { title: 'SWAP', route: '#' },
-            { title: 'POOL', route: '#' },
-            { title: 'CHARTS', route: '#' },
-          ].map(({ route, title }) => (
-            <li className="mx-8" key={title} >
-              <Link href={route}>
-                <a className='inline-block px-4 py-4 text-white md:block'>{title}</a>
-              </Link>
-            </li>
-          ))}
+        <ul style={{ marginLeft: "60px", display: "inline-flex" }}>
+          <li className="navbar_li" >
+            <Link href=''>
+              < a className='inline-block text-white'>SWAP</a>
+            </Link>
+          </li >
+          <li className="navbar_li">
+            <Link href='' >
+              <a className='inline-block text-white md:block'>POOL</a>
+            </Link>
+          </li>
+          <li className="navbar_li">
+            <Link href=''>
+              <a className='inline-block text-white md:block'>CHART</a>
+            </Link>
+          </li>
+
           <div
             className={cn(
-              'flex mt-6 justify-between',
+              'flex justify-between',
               mobileMenuIsOpen ? `block` : `hidden`
             )}
           >
             <button
               type='button'
-              className='inline-flex items-center px-10 py-2 text-base font-medium text-white rounded-md shadow-sm' style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}
+              className='inline-flex items-center text-base font-medium text-white rounded-md shadow-sm' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}
               onClick={() => setConnectWalletButton(!connectWalletButton)} >
               Connect Wallet{dropWalletBox()}
             </button>
           </div>
-        </ul>
+        </ul >
       );
     }
   }
@@ -83,7 +88,7 @@ export default function Header() {
     if (mobileMenuOpen) {
       return (
         <>
-          <ul className='absolute right-0 flex flex-col m-auto border-2 rounded top-12 menu-drop bg-b-body w-96 border-b-text'>
+          <ul className='absolute right-0 flex flex-col m-auto border-2 rounded top-12 menu-drop bg-b-body border-b-text'>
             <button
               type='button'
               className='items-center px-10 py-2 m-auto mt-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm'
@@ -151,35 +156,26 @@ export default function Header() {
 
   return (
     <>
-      <navbar className='desktop:px-72 desktop:pr-72 laptop:px-8 laptop:pr-8 tablet:px-8 tablet:pr-8 phone:px-4 phone:pr-4' style={{ background: "#2b2d3c", borderBottom: "solid #494D66 1px", zIndex: "100" }} >
-        <div className='flex flex-wrap items-center justify-between mr-2'>
-          <div className='flex flex-row'>
-            <div>
-              <Link href='/'>
-                <Image
-                  className='p-0 m-0'
-                  src='/logo.svg'
-                  width={145}
-                  height={50}
-                  priority
-                  alt='logo'
-                />
-              </Link>
-            </div>
-            {drawDesktopUl()}
-          </div>
-          <button
-            type='button'
-            className='items-center px-10 py-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-tiny'
-            style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
-            Connect Wallet
-            {dropWalletBox()}
-          </button>
-          {drawDropdownButton()}
-        </div>
+      <navbar className="border-b-2 bg-b-body border-b-text" style={{ background: "#2b2d3c", zIndex: "100", width: "1440px", height: "80px", margin: "auto", marginTop: "0px" }} >
+        <Link href='/'>
+          <img style={{
+            marginLeft: "70px", width: "160px", height: "28px", marginRight: "0px", display: "inline"
+          }}
+            src='/logo.svg'
+            alt='logo'
+          />
+        </Link>
+        {drawDesktopUl()}
+        <button
+          type='button'
+          className='relative flex flex-row items-center text-white rounded-md shadow-sm'
+          style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", float: "right", marginRight: "70px", marginTop: "12px", padding: "18px 32px 18px 16px", paddingTop: "18px", fontSize: "16px" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
+          01x3290...4454<img src='navbar/white_caret.svg' style={{ marginLeft: "12px", }} />
+          {dropWalletBox()}
+        </button>
+        {drawDropdownButton()}
       </navbar>
       {drawBackground()}
-
     </>
 
   )
