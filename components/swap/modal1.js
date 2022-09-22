@@ -8,7 +8,7 @@ const Modal1 = () => {
                 </div>
                 <div className="flex flex-row items-center justify-between rounded-md" style={{ border: "solid #494d66 0.5px", marginTop: "40px", padding: "30px" }}>
                     <input className="w-2/3 text-black bg-transparent focus:outline-none" type="text" placeholder="0.1" style={{ fontSize: "32px", padding: "2px" }} />
-                    <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
+                    <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px", background: "#f8f8fa" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
                         <img src="/swap/swapEther.svg" style={{ height: "24px", marginRight: "8px" }} />
                         <p style={{ color: "#2b2d3c", fontSize: "20px", marginRight: "15px" }}>Eth</p>
                         <img src="/swap/vectorBlack.svg" style={{ width: "14px" }} /></button>
@@ -17,32 +17,30 @@ const Modal1 = () => {
                 <div className="flex flex-col items-center justify-between rounded-md" style={{ border: "solid #494d66 0.5px", marginTop: "18px", padding: "30px" }}>
                     <div className="flex flex-row items-center justify-between w-full rounded-lg">
                         <input className="w-2/3 text-black bg-transparent focus:outline-none" type="text" placeholder="0.1" style={{ fontSize: "32px", padding: "2px" }} />
-                        <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
+                        <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px", background: "#f8f8fa" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
                             <img src="/swap/swapEther.svg" style={{ height: "24px", marginRight: "8px" }} />
                             <p style={{ color: "#2b2d3c", fontSize: "20px", marginRight: "15px" }}>Eth</p>
                             <img src="/swap/vectorBlack.svg" style={{ width: "14px" }} /></button>
                     </div>
-                    <div className="grid flex-row gap-2 border-2 rounded-lg  border-b-text grid-rows-13" style={{ border: "solid #494d66 1px", padding: "8px 17px" }}>
-                        <div classname="" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399" }}>1</div>
-                        <div classname="" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399" }}>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                        <div>7</div>
-                        <div>8</div>
-                        <div>9</div>
-                        <div>10</div>
-                        <div>11</div>
-                        <div>More <img /></div>
+                    <div className="grid w-full grid-cols-12 gap-2 border-2 rounded-lg border-b-text" style={{ border: "solid #494d66 1px", padding: "8px 17px", marginTop: "24px", background: "#f8f8fa" }}>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>1</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>2</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>3</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>4</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>5</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>6</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>7</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>8</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }} > 9</div>
+                        <div classname="col-span-1 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "24px", lineHeight: "29px", color: "#6d7399", background: "white" }}>10</div>
+                        <div classname="col-span-2 border-2 rounded" style={{ padding: "10px 12.5px 10px 12.5px  ", fontSize: "18px", lineHeight: "29px", color: "#6d7399", display: "flex", flexDirection: "row", color: "#806def", alignItems: "center", marginLeft: "14px" }}>More<img src='/swap/arrowRight.svg' style={{ marginLeft: "8.5px" }} /></div>
                     </div>
 
                 </div>
                 <button type='button' className='w-full font-medium text-white rounded-md' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", marginTop: "44px", padding: "28px 272px", fontSize: "20px" }}>CONNECT WALLET</button>
                 <img src='/navbar/settings.svg' onClick={() => setSettingButton(!settingButton)} style={{ position: "absolute", top: "34px", right: "34px", height: "28px" }}></img>
             </div>
-        </section>
+        </section >
     )
 }
 

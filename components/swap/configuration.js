@@ -1,14 +1,16 @@
+import Background from "./background"
+
 const Configuration = () => {
     return (
-        <section className="flex flex-col justify-center m-auto mt-2 mb-6 bg-white rounded-md shadow-lg shadow-indigo-500/50 desktop:w-3/5 laptop:w-3/5 tablet:w-4/5 phone:11/12">
-            <div className="flex flex-row items-center border-b-2">
-                <img src='/swap/arrowLeft.svg' className="mx-4 mr-4 desktop:h-6 laptop:h-5 tablet:h-4 phone:h-2" />
-                <div className="p-2 mb-2">
-                    <p className="mb-2 font-bold desktop:text-2xl laptop:text-lg tablet:text-base phone:text-md text-b-body">Configuration</p>
-                    <p className=" text-b-text desktop:text-xl laptop:text-base tablet:text-md phone:text-sm">Pool Configuration</p>
+        <section style={{ position: "absolute", top: "276px", marginLeft: "290px", width: "860px", background: "white", borderRadius: "10px" }}>
+            <div className="flex flex-row border-b-2">
+                <img src='/swap/arrowLeft.svg' style={{ width: "18.55px", marginLeft: "32.5px", marginTop: "46.3px", marginBottom: "30px" }} />
+                <div style={{ marginLeft: "59px", marginTop: "32px", marginBottom: "20px" }}>
+                    <p className="font-bold text-b-body" style={{ fontSize: "20px", lineHeight: "15px", marginBottom: "12px" }}>Configuration</p>
+                    <p className=" text-b-text" style={{ fontSize: "16px", lineHeight: "13px" }}>Pool Configuration</p>
                 </div>
             </div>
-            <div className="p-8 phone:p-4">
+            <div style={{ padding: "" }}>
                 <div className="addressBox">
                     <p className="px-4 py-8 pr-2 mr-2 desktop:text-xl laptop:text-lg tablet:text-sm phone:text-tiny text-b-text phone:px-2 phone:py-4">0x2b2e8cda09bba9660dca5cb6233787738ad68329</p>
                     <img src="/swap/copy.svg" className="mr-2" />
