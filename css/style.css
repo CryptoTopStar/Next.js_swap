@@ -381,12 +381,22 @@ align-items: center;
 }
 .nftButton{
   border: solid 1px transparent;
-  border-radius: 8px;
+  border-radius: 10px;
   background-image: linear-gradient(to right, white, white), 
                     linear-gradient(to right, #FA02FF, #06D6Df);
   background-origin: border-box;
   background-clip: content-box, border-box;
   color:#6d7399;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+}
+.nftButton p{
+  padding:"10px";
+  color: #6D7399;
+
 }
 .detailBox{
   border: solid 1px transparent;

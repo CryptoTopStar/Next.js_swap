@@ -10,102 +10,102 @@ const Configuration = () => {
                     <p className=" text-b-text" style={{ fontSize: "16px", lineHeight: "13px" }}>Pool Configuration</p>
                 </div>
             </div>
-            <div style={{ padding: "" }}>
+            <div style={{ padding: "32px 110px" }}>
                 <div className="addressBox">
-                    <p className="px-4 py-8 pr-2 mr-2 desktop:text-xl laptop:text-lg tablet:text-sm phone:text-tiny text-b-text phone:px-2 phone:py-4">0x2b2e8cda09bba9660dca5cb6233787738ad68329</p>
-                    <img src="/swap/copy.svg" className="mr-2" />
-                    <img src='/swap/eva.svg' className="mr-2" />
+                    <p className=" text-b-text" style={{ padding: " 29px 12px 29px 47px " }}>0x2b2e8cda09bba9660dca5cb6233787738ad68329</p>
+                    <img src="/swap/copy.svg" style={{ height: "24px" }} />
+                    <img src='/swap/eva.svg' style={{ marginLeft: "12px", height: "24px" }} />
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:text-sm "><img src='/swap/alert.svg' className="mr-2" />This is your Pair address</p>
+                <p className="flex flex-row items-center" style={{ marginTop: "12px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />This is your Pair address</p>
             </div>
-            <div className="p-8 phone:p-4">
-                <div className="flex flex-row justify-between mb-2">
-                    <p className="text-b-body desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">APV</p>
-                    <p className="text-b-text desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Balance:<span>&nbsp;0.0067</span></p>
+            <div style={{ marginTop: "42px", paddingLeft: "110px", paddingRight: "110px" }}>
+                <div className="flex flex-row justify-between" style={{ marginBottom: "13px" }}>
+                    <p className="text-b-body" style={{ fontSzie: "18px", fontWeight: "600" }}>APV</p>
+                    <p className="text-b-text" style={{ fontSize: "16px", color: "#494d66" }}>Balance:<span style={{ fontSize: "18px", fontWeight: "500" }}>&nbsp;0.0067</span></p>
                 </div>
-                <div className="p-4 border-2 rounded-md">
+                <div style={{ padding: "32px 32px 12px 32px", borderRadius: "10px", border: "solid #494d66 1px" }}>
                     <div>
-                        <div className="flex flex-row justify-between mb-8">
-                            <p className="desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">0.00</p>
+                        <div className="flex flex-row justify-between" style={{ marginBottom: "40px" }}>
+                            <p style={{ fontSize: "20px", color: "#9b9b9b" }}>0.00</p>
                             <div className="flex flex-row text-black">
-                                <button className="pr-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Withdraw</button>&nbsp;|
-                                <button className="px-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Deposit</button>
+                                <button className=" gradient_text" style={{ fontSize: "16px", marginRight: "12px" }}>Withdraw</button>|
+                                <button className="text-152dff" style={{ fontSize: "16px", marginLeft: "12px" }}>Deposit</button>
                             </div>
                         </div>
-                        <div className="grid p-5 overflow-y-auto rounded-md desktop:grid-cols-10 desktop:gap-4 flex-nowrap bg-f8f8fa h-28 phone:grid-cols-4 phone:gap-2 laptop:grid-cols-8 laptop:gap-2 tablet:grid-cols-6 tablet:gap-2">
-                            <button className="text-2xl nftButton">1</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
-                            <button className="text-2xl nftButton">7</button>
-                            <button className="text-2xl nftButton">1</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
-                            <button className="text-2xl nftButton">1</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
-                            <button className="text-2xl nftButton">7</button>
-                            <button className="text-2xl nftButton">1</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
-                            <button className="text-2xl nftButton">1</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
-                            <button className="text-2xl nftButton">3</button>
-                            <button className="text-2xl nftButton">5</button>
+                        <div className="grid h-32 gap-4 overflow-y-auto rounded-md desktop:grid-cols-10 bg-f8f8fa" style={{ padding: "17px 24px 17px 24px" }}>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>3</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>5</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>7</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>3</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>5</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>7</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>3</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>5</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>7</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>3</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>5</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>7</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>3</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>5</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>7</p></button>
+                            <button className=" nftButton"><p style={{ padding: "10px" }}>1</p></button>
+
+
                         </div>
                     </div>
 
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:text-sm"><img src='/swap/alert.svg' className="mr-2" />Select NFT Ids you'd like to deposit or withdraw, from the pair</p>
+                <p className="flex flex-row items-center" style={{ marginTop: "13px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />Select NFT Ids you'd like to deposit or withdraw, from the pair</p>
             </div>
-            <div className="flex flex-col p-8 phone:p-4">
-                <div className="flex flex-row border-2 rounded-md">
+            <div className="flex flex-col" style={{ marginTop: "40px", paddingLeft: "110px", paddingRight: "110px" }}>
+                <div className="flex flex-row" style={{ borderRadius: "10px", border: "solid #494d55 0.5px" }}>
                     <input type="number" className="w-full p-4 rounded-md outline-none text-b-body" placeholder="10.00" />
                     <div className="flex flex-row p-4 text-black">
-                        <button className="pr-2 gradient_text desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Withdraw</button>&nbsp;|
-                        <button className="px-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Deposit</button>
+                        <button className=" text-152dff" style={{ fontSize: "16px", marginRight: "12px" }}>Withdraw</button>|
+                        <button className="text-152dff" style={{ fontSize: "16px", marginLeft: "12px" }}>Deposit</button>
                     </div>
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:shadow-md "><img src='/swap/alert.svg' className="mr-2" />Ether amount you'd like to deposit or withdraw, from the pair</p>
+                <p className="flex flex-row items-center" style={{ marginTop: "13px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />Ether amount you'd like to deposit or withdraw, from the pair</p>
             </div>
-            <div className="flex flex-col p-8 phone:p-4">
-                <div className="flex flex-row border-2 rounded-md">
-                    <input type="number" className="w-full p-4 rounded-md outline-none text-b-body" placeholder="10.00" />
+            <div className="flex flex-col" style={{ marginTop: "40px", paddingLeft: "110px", paddingRight: "110px" }}>
+                <div className="flex flex-row" style={{ borderRadius: "10px", border: "solid #494d55 0.5px", background: "#f1f1f3" }}>
+                    <input type="number" className="w-full p-4 bg-transparent rounded-md outline-none text-b-body" placeholder="10.00" />
                     <div className="flex flex-row p-4 text-black">
-                        <button className="pr-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Withdraw</button>&nbsp;|
-                        <button className="px-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Deposit</button>
+                        <button className=" text-9b9b9b" style={{ fontSize: "16px", marginRight: "12px" }}>Withdraw</button>|
+                        <button className="text-9b9b9b" style={{ fontSize: "16px", marginLeft: "12px" }}>Deposit</button>
                     </div>
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:text-sm "><img src='/swap/alert.svg' className="mr-2" />ERC-20 amount you'd like to deposit or withdraw, from the pair</p>
+                <p className="flex flex-row items-center" style={{ marginTop: "13px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />ERC-20 amount you'd like to deposit or withdraw, from the pair</p>
             </div>
-            <div className="flex flex-col p-8 phone:p-4">
-                <div className="flex flex-row border-2 rounded-md">
-                    <input type="number" className="w-full p-4 rounded-md outline-none text-b-body" placeholder="10.00" />
-                    <div className="flex flex-row p-4 text-black">
-                        <button className="px-2 text-152dff">Update</button>
-                    </div>
+            <div className="flex flex-col" style={{ marginTop: "40px", paddingLeft: "110px", paddingRight: "110px" }}>
+                <div className="flex flex-row" style={{ border: "solid #494d66 0.5px", borderRadius: "10px", padding: "21px 16px", }}>
+                    <input type="number" className="w-full outline-none focus-within:rounded-md text-b-body" placeholder="10.00" />
+                    <button className=" text-152dff">Update</button>
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:text-sm"><img src='/swap/alert.svg' className="mr-2" />Update the price increase (delta) for this pair</p>
+                <p className="flex flex-row items-center" style={{ marginTop: "13px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />Update the price increase (delta) for this pair</p>
             </div>
-            <div className="flex flex-col p-8 phone:p-4">
-                <div className="flex flex-row border-2 rounded-md">
-                    <input type="number" className="w-full p-4 rounded-md outline-none text-b-body" placeholder="10.00" />
-                    <div className="flex flex-row p-4 text-black">
-                        <button className="px-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Update</button>
-                    </div>
+            <div className="flex flex-col" style={{ marginTop: "40px", paddingLeft: "110px", paddingRight: "110px" }}>
+                <div className="flex flex-row" style={{ border: "solid #494d66 0.5px", borderRadius: "10px", padding: "21px 16px", }}>
+                    <input type="number" className="w-full outline-none focus-within:rounded-md text-b-body" placeholder="10.00" />
+                    <button className=" text-152dff">Update</button>
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:text-sm"><img src='/swap/alert.svg' className="mr-2" />Update fee for this pair</p>
+                <p className="flex flex-row items-center" style={{ marginTop: "13px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />Update fee for this pair</p>
             </div>
-            <div className="flex flex-col p-8 phone:p-4">
-                <div className="flex flex-row border-2 rounded-md">
-                    <input type="number" className="w-full p-4 rounded-md outline-none text-b-body" placeholder="10.00" />
-                    <div className="flex flex-row p-4 text-black">
-                        <button className="px-2 text-152dff desktop:text-xl laptop:text-lg tablet:text-base phone:text-md">Update</button>
-                    </div>
+            <div className="flex flex-col" style={{ marginTop: "40px", marginBottom: "80px", paddingLeft: "110px", paddingRight: "110px" }}>
+                <div className="flex flex-row" style={{ border: "solid #494d66 0.5px", borderRadius: "10px", padding: "21px 16px", }}>
+                    <input type="number" className="w-full outline-none focus-within:rounded-md text-b-body" placeholder="0x000000000000000000000000..." />
+                    <button className=" text-152dff">Update</button>
                 </div>
-                <p className="flex flex-row items-center mt-2 text-base phone:text-sm "><img src='/swap/alert.svg' className="mr-2" />Update the address that receives assets from this pair  </p>
+                <p className="flex flex-row items-center" style={{ marginTop: "13px", fontSize: "16px", lineHeight: "13px", color: "#666980" }}><img src='/swap/alert.svg' style={{ height: "14px", marginRight: "5px" }} />Update the address that receives assets from this pair</p>
             </div>
 
         </section>

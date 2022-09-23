@@ -1,14 +1,14 @@
 const Configuration = () => {
     return (
-        <section className="flex flex-col justify-center m-auto mt-6 mb-6 bg-white rounded-md shadow-lg desktop:w-8/12 laptop:w-9/12 tablet:w-10/12 phone:w-11/12 shadow-indigo-500/50">
-            <div className="flex flex-row items-stretch border-b-2">
-                <img src='/swap/arrowLeft.svg' className="mx-4 mr-6" />
-                <div className="p-2 mb-2">
-                    <p className="font-bold text-b-body desktop:text-2xl laptop:text-lg tablet:text-base phone:text-md">Your Liquidity</p>
-                    <p className=" text-b-text desktop:text-lg laptop:text-base tablet:text-md phone:text-sm">Receive LP tokens and earn 0.17% trading fees</p>
+        <section style={{ position: "absolute", top: "276px", marginLeft: "290px", width: "860px", background: "white", borderRadius: "10px" }}>
+            <div className="flex flex-row" style={{ borderBottom: "solid #e4e4e5 0.5px" }}>
+                <img src='/swap/arrowLeft.svg' style={{ width: "18.55px", marginLeft: "32.5px", marginTop: "77.3px", marginBottom: "30px" }} />
+                <div style={{ marginLeft: "65px", marginTop: "62px", marginBottom: "20px" }}>
+                    <p className="font-bold text-b-body" style={{ fontSize: "20px", lineHeight: "15px", marginBottom: "12px" }}>Your Liquidity</p>
+                    <p className=" text-b-text" style={{ fontSize: "16px", lineHeight: "13px" }}>Receive LP tokens and earn 0.17% trading fees</p>
                 </div>
             </div>
-            <p className="px-16 py-8 font-bold text-2e3041 desktop:text-2xl laptop:text-lg tablet:text-base phone:text-sm">CHOOSE A VALID PAIR</p>
+            <p className="font-bold  text-2e3041" style={{ marginTop: "32px", marginLeft: "110px" }}>CHOOSE A VALID PAIR</p>
             <div className="flex px-10 mb-8 phone:flex-col desktop:flex-row laptop:flex-row tablet:flex-row">
                 <div className="flex flex-col desktop:w-7/12 laptop:w-7/12 tablet:w-7/12 phone:w-full">
                     <div className="flex flex-col p-4">
