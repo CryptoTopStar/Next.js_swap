@@ -3,18 +3,16 @@ import { useEffect, useState } from "react"
 const LandingPage = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        window.addEventListener('resize', () => {
-            console.log(screen.width)
-            if (screen.width > 429) {
-                setDesktop(true);
-                console.log(desktop)
-            }
-            if (screen.width < 429) {
-                setDesktop(false);
-                console.log(desktop)
-            }
+        console.log(screen.width)
+        if (screen.width > 429) {
+            setDesktop(true);
+            console.log(desktop)
+        }
+        if (screen.width < 429) {
+            setDesktop(false);
+            console.log(desktop)
+        }
 
-        })
     }, []);
     if (desktop) {
         return (

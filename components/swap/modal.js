@@ -27,16 +27,13 @@ const Modal = () => {
         setSelectTokenModal(!selectTokenModal);
     }
     useEffect(() => {
-        window.addEventListener('resize', () => {
-            console.log(screen.width)
-            if (screen.width > 429) {
-                setDesktop(true);
-            }
-            if (screen.width < 429) {
-                setDesktop(false);
-            }
-
-        })
+        console.log(screen.width)
+        if (screen.width > 429) {
+            setDesktop(true);
+        }
+        if (screen.width < 429) {
+            setDesktop(false);
+        }
     }, []);
     const drawScreen = () => {
         if (desktop) {

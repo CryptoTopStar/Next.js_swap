@@ -4,18 +4,15 @@ import { useEffect, useState } from "react"
 const ChartContent = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        window.addEventListener('resize', () => {
-            console.log(screen.width)
-            if (screen.width > 429) {
-                setDesktop(true);
-                console.log(desktop)
-            }
-            if (screen.width < 429) {
-                setDesktop(false);
-                console.log(desktop)
-            }
-
-        })
+        console.log(screen.width)
+        if (screen.width > 429) {
+            setDesktop(true);
+            console.log(desktop)
+        }
+        if (screen.width < 429) {
+            setDesktop(false);
+            console.log(desktop)
+        }
     }, []);
     const drawScreen = () => {
         if (!desktop) {

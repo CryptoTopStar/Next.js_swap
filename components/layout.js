@@ -5,17 +5,18 @@ import { useEffect, useState } from 'react'
 export default function Layout(props) {
   const [desktop, setDesktop] = useState(false)
 
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      console.log(screen.width)
-      if (screen.width > 429) {
-        setDesktop(true);
-      }
-      if (screen.width < 429) {
-        setDesktop(false);
-      }
 
-    })
+
+  useEffect(() => {
+
+    console.log(screen.width)
+    if (screen.width > 429) {
+      setDesktop(true);
+    }
+    if (screen.width < 429) {
+      setDesktop(false);
+    }
+
   }, []);
   const drawmain = () => {
     {
@@ -28,11 +29,14 @@ export default function Layout(props) {
     }
   }
   return (
-    <div className="flex flex-col min-h-screen bg-b-body" >
-      <Navbar />
-      {drawmain()}
-      <Footer />
+    <>
+      <div className="flex flex-col min-h-screen bg-b-body" >
+        <Navbar />
+        {drawmain()}
+        <Footer />
 
-    </div>
+      </div>
+    </>
+
   )
 }

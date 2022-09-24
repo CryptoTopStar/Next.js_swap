@@ -11,18 +11,15 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [desktop, setDesktop] = useState(false)
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      console.log(screen.width)
-      if (screen.width > 429) {
-        setDesktop(true);
-        console.log(desktop)
-      }
-      if (screen.width < 429) {
-        setDesktop(false);
-        console.log(desktop)
-      }
-
-    })
+    console.log(screen.width)
+    if (screen.width > 429) {
+      setDesktop(true);
+      console.log(desktop)
+    }
+    if (screen.width < 429) {
+      setDesktop(false);
+      console.log(desktop)
+    }
   }, []);
   const dropWalletBox = () => {
     if (connectWalletButton) {
@@ -188,7 +185,7 @@ export default function Header() {
     if (!desktop) {
       return (
         <>
-          <navbar className="flex flex-row items-center bg-b-body" style={{ background: "#2b2d3c", zIndex: "100", width: "430px", height: "107px", marginRight: "auto", marginLeft: "auto", marginTop: "0px", marginBottom: "0px", paddingTop: "50px" }} >
+          <navbar className="flex flex-row items-center bg-b-body" style={{ background: "#2b2d3c", zIndex: "100", width: "430px", height: "107px", marginRight: "0", marginLeft: "0", marginTop: "0px", marginBottom: "0px", paddingTop: "50px" }} >
             <Link href='/'>
               <img style={{
                 width: "137px", height: "24px", marginLeft: "16px", marginRight: "45px", marginTop: "8px"

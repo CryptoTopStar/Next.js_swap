@@ -5,18 +5,15 @@ import { useState, useEffect } from 'react';
 export default function Footer() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      console.log(window.innerWidth)
-      if (screen.width > 429) {
-        setMobileMenuIsOpen(false);
-        setDesktop(true);
-      }
-      if (screen.width < 429) {
-        setMobileMenuIsOpen(true);
-        setDesktop(false);
-      }
-
-    })
+    console.log(window.innerWidth)
+    if (screen.width > 429) {
+      setMobileMenuIsOpen(false);
+      setDesktop(true);
+    }
+    if (screen.width < 429) {
+      setMobileMenuIsOpen(true);
+      setDesktop(false);
+    }
   }, []);
   const [desktop, setDesktop] = useState(false)
   const drawScreen = () => {
