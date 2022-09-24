@@ -3,12 +3,12 @@ import BuyNftListItem from "./buyNFTListItem"
 const BuyNftList = () => {
     return (
         <>
-            <div className="absolute bottom-0 right-0 z-20 desktop:w-1/4 laptop:w-2/4 tablet:w-2/4 phone:hidden desktop:block tablet:block laptop:block bg-37394c" style={{ height: "800px" }}>
-                <div className="flex flex-row items-center justify-between p-8">
-                    <p className="text-2xl text-white"> Buy 5 NFT's</p>
-                    <p className="text-base text-9b9b9b">clear</p>
+            <div className="absolute bottom-0 right-0 z-20 h-full bg-37394c" style={{ width: "380px" }}>
+                <div className="flex flex-row items-center justify-between" style={{ padding: "16px" }}>
+                    <p className="text-white " style={{ fontSize: "32px", fontWeight: "500" }}> Buy 5 NFT's</p>
+                    <p className=" text-9b9b9b" style={{ fontSize: "16px" }}>clear</p>
                 </div>
-                <div style={{ height: "600px", overflowY: "auto" }}>
+                <div>
                     <BuyNftListItem />
                     <BuyNftListItem />
                     <BuyNftListItem />
@@ -17,16 +17,12 @@ const BuyNftList = () => {
                     <BuyNftListItem />
                 </div>
             </div>
-            <div className="absolute bottom-0 right-0 z-30 flex-row items-center justify-between p-4 bg-white desktop:flex laptop:flex tablet:flex desktop:w-1/4 laptop:w-2/4 tablet:w-2/4 phone:hidden ">
-                <div className="flex flex-row items-baseline">
-                    <img src='/charts/arrowright.svg' className="mr-2" />
-                    <p className="text-b-text">Buy Total:</p>
-                    <p className="mr-2 text-2xl font-bold text-b-body">10.000</p>
-                    <p className="text-b-text">ETH</p>
-                </div>
-                <div className="border-2 rounded-lg nftGridButton bg-37394c">
-                    <button className="px-4 py-2">Buy</button>
-                </div>
+            <div className="absolute bottom-0 right-0 z-30 flex flex-row items-baseline bg-white" style={{ width: "380px", padding: "6px 16px" }}>
+                <img src='/charts/arrowright.svg' style={{ width: "8px", marginRight: "8px" }} />
+                <p className="text-b-text" style={{ fontSize: "16px", marginRight: "8px" }}>Buy Total:</p>
+                <p className=" text-b-body" style={{ fontSize: "24px", fontWeight: "700", marginRight: "3px", color: "#494d66" }}>10.000</p>
+                <p className="text-b-text" style={{ fontSize: "12px", fontWeight: "500", color: "#494d66", marginRight: "57px" }}>ETH</p>
+                <button className="buy"><p style={{ padding: "8px 16px", fontSize: "20px", fontWeight: "600", color: "white" }}> Buy</p></button>
             </div>
 
         </>

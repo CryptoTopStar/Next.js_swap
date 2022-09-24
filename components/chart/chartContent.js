@@ -1,15 +1,51 @@
 import ChartItem from "./chart"
 import Table from "./table"
+import { useEffect, useState } from "react"
 const ChartContent = () => {
-    return (
-        <section className="flex bg-b-body desktop:flex-row laptop:flex-row tablet:flex-row phone:flex-col">
-            <div className="m-4 desktop:w-7/12 laptop:w-7/12 tablet:w-7/12 phone:w-full">
-                <ChartItem />
-            </div>
-            <div className="p-4 mt-4 overflow-y-auto desktop:w-5/12 laptop:w-5/12 tablet:w-5/12 phone:w-full" style={{ height: "420px" }}>
-                <Table />
-            </div>
-        </section>
-    )
+    const [desktop, setDesktop] = useState(false)
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                console.log(desktop)
+            }
+            if (screen.width < 429) {
+                setDesktop(false);
+                console.log(desktop)
+            }
+
+        })
+    }, []);
+    const drawScreen = () => {
+        if (!desktop) {
+            return (
+                <section className="flex flex-col bg-b-body ">
+                    <div style={{ width: "400px", height: "250px", padding: "15px" }}>
+                        <ChartItem />
+                    </div>
+                    <div className="">
+                        <Table />
+                    </div>
+                </section>
+            )
+
+        }
+        if (desktop) {
+            return (
+                <section className="flex bg-b-body desktop:flex-row ">
+                    <div style={{ width: "947px", height: "663px", paddingTop: "11px" }}>
+                        <ChartItem />
+                    </div>
+                    <div className="" style={{ height: "630px", width: '500px' }}>
+                        <Table />
+                    </div>
+                </section>
+            )
+
+        }
+    }
+
+    return drawScreen()
 }
 export default ChartContent

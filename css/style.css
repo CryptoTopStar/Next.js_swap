@@ -409,9 +409,15 @@ line-height: 17px;
 }
 th,td{
   padding: 10px;
+  font-size: 16px;
 }
 .chartPageButton{
-  border-bottom: solid transparent 2px
+  border-bottom: solid transparent 2px;
+  width: 110px;
+  height:110px;
+  padding:22px 8px;
+  margin-right:8px;
+  background-color: #37394d;
 }
 .chartPageButton:hover{
   border-image: linear-gradient(to right, #F506FE , #06D6DF) 1;
@@ -420,19 +426,19 @@ th,td{
 
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 2px grey; 
-  border-radius: 5px;
+  border-radius: 10px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #42455C;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -481,4 +487,16 @@ th,td{
 }
 .landingDiv{
   border-image: linear-gradient(180deg, rgba(250, 2, 255, 0.2) -7.92%, rgba(6, 214, 223, 0.2) 94.7%);
+}
+.table_tr:hover{
+  background: linear-gradient(90deg, rgba(250, 2, 255, 0.05) 0%, rgba(6, 214, 223, 0.05) 100%);
+
+}
+.buy{
+  border: solid 1px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #5f6285, #5f6285), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }

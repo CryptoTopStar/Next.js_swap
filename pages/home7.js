@@ -7,7 +7,7 @@ import Whitebackground1 from "../components/swap/whitebackground1";
 export default function swapPage() {
     return (
         <>
-            <Market />
+            <Market marginleft='294px' />
             <Whitebackground1 />
             <Configuration />
         </>

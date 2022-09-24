@@ -1,8 +1,24 @@
 import React from "react";
 import Chart from "chart.js";
-import { userstate, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
 
 const ChartItem = () => {
+    const [desktop, setDesktop] = useState(false)
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                console.log(desktop)
+            }
+            if (screen.width < 429) {
+                setDesktop(false);
+                console.log(desktop)
+            }
+
+        })
+    }, []);
     useEffect(() => {
         var config = {
             type: "line",
@@ -21,7 +37,7 @@ const ChartItem = () => {
                         label: new Date().getFullYear(),
                         backgroundColor: "#3182ce",
                         borderColor: "#3182ce",
-                        data: [65, 78, 66, 44, 56, 67, 75],
+                        data: [1, 23, 66, 44, 56, 67, 75],
                         fill: false,
                     },
                 ],
@@ -101,17 +117,37 @@ const ChartItem = () => {
         var ctx = document.getElementById("line-chart").getContext("2d");
         window.myLine = new Chart(ctx, config);
     }, []);
-    return (
-        <>
-            <div className="relative flex flex-col w-full mb-6 break-words rounded shadow-lg bg-blueGray-700">
-                <div className="flex-auto p-4">
-                    {/* Chart */}
-                    <div className="relative h-96">
-                        <canvas id="line-chart"></canvas>
+    const drawScreen = () => {
+        if (desktop) {
+            return (
+                <>
+                    <div className="relative flex flex-col w-full break-words rounded shadow-lg bg-blueGray-700">
+                        <div className="flex-auto">
+                            {/* Chart */}
+                            <div className="relative" style={{ width: "900px", height: "617px" }}>
+                                <canvas id="line-chart"></canvas>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </>
-    );
+                </>
+            )
+
+        }
+        if (!desktop) {
+            return (
+                <>
+                    <div className="relative flex flex-col w-full break-words rounded shadow-lg bg-blueGray-700">
+                        <div className="flex-auto">
+                            {/* Chart */}
+                            <div className="relative" style={{ width: "400px", height: "250px" }}>
+                                <canvas id="line-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+        }
+    }
+    return drawScreen();
 }
 export default ChartItem

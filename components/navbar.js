@@ -9,14 +9,17 @@ export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
   const [connectWalletButton, setConnectWalletButton] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [desktop, setDesktop] = useState(false)
   useEffect(() => {
     window.addEventListener('resize', () => {
-      console.log(window.innerWidth)
-      if (window.innerWidth > 429) {
-        setMobileMenuIsOpen(false);
+      console.log(screen.width)
+      if (screen.width > 429) {
+        setDesktop(true);
+        console.log(desktop)
       }
-      if (window.innerWidth < 429) {
-        setMobileMenuIsOpen(true);
+      if (screen.width < 429) {
+        setDesktop(false);
+        console.log(desktop)
       }
 
     })
@@ -85,14 +88,14 @@ export default function Header() {
       return <Background />;
   }
   const drawMobileMenu = () => {
-    if (mobileMenuOpen) {
+    if (mobileMenuIsOpen) {
       return (
         <>
-          <ul className='absolute right-0 flex flex-col m-auto border-2 rounded top-12 menu-drop bg-b-body border-b-text'>
+          <ul className='flex flex-col items-center menu-drop bg-b-body border-b-text' style={{ position: "absolute", top: "100px", padding: "40px 16px", marginLeft: "96px", width: "332px", alignItems: "center", border: "solid #20212b 1px", zIndex: "50" }}>
             <button
               type='button'
-              className='items-center px-10 py-2 m-auto mt-2 font-medium text-white rounded-md shadow-sm desktop:text-xl laptop:text-lg tablet:text-base phone:text-sm'
-              style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}>
+              className="text-white rounded-md "
+              style={{ position: "relative", backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", padding: "22px 94px", borderRadius: "10px" }}>
               Launch App
             </button>
             <li className="mx-8 mt-2 mobileLi" >
@@ -147,36 +150,68 @@ export default function Header() {
             </li>
 
           </ul >
+
         </>
       )
     }
   }
 
+
   console.log(connectWalletButton);
+  const drawScreen = () => {
+    if (desktop) {
+      return (
+        <>
+          <navbar className="border-b-2 bg-b-body border-b-text" style={{ background: "#2b2d3c", zIndex: "100", width: "1440px", height: "80px", marginRight: "auto", marginLeft: "auto", marginTop: "0px", marginBottom: "0px" }} >
+            <Link href='/'>
+              <img style={{
+                marginLeft: "70px", width: "160px", height: "28px", marginRight: "0px", display: "inline"
+              }}
+                src='/logo.svg'
+                alt='logo'
+              />
+            </Link>
+            {drawDesktopUl()}
+            <button
+              type='button'
+              className='relative flex flex-row items-center text-white rounded-md shadow-sm'
+              style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", float: "right", marginRight: "70px", marginTop: "12px", padding: "18px 32px 18px 16px", paddingTop: "18px", fontSize: "16px" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
+              01x3290...4454<img src='navbar/white_caret.svg' style={{ marginLeft: "12px", }} />
+              {dropWalletBox()}
+            </button>
+            {drawDropdownButton()}
+          </navbar>
+          {drawBackground()}</>
+      )
 
-  return (
-    <>
-      <navbar className="border-b-2 bg-b-body border-b-text" style={{ background: "#2b2d3c", zIndex: "100", width: "1440px", height: "80px", margin: "auto", marginTop: "0px" }} >
-        <Link href='/'>
-          <img style={{
-            marginLeft: "70px", width: "160px", height: "28px", marginRight: "0px", display: "inline"
-          }}
-            src='/logo.svg'
-            alt='logo'
-          />
-        </Link>
-        {drawDesktopUl()}
-        <button
-          type='button'
-          className='relative flex flex-row items-center text-white rounded-md shadow-sm'
-          style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", float: "right", marginRight: "70px", marginTop: "12px", padding: "18px 32px 18px 16px", paddingTop: "18px", fontSize: "16px" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
-          01x3290...4454<img src='navbar/white_caret.svg' style={{ marginLeft: "12px", }} />
-          {dropWalletBox()}
-        </button>
-        {drawDropdownButton()}
-      </navbar>
-      {drawBackground()}
-    </>
+    }
+    if (!desktop) {
+      return (
+        <>
+          <navbar className="flex flex-row items-center bg-b-body" style={{ background: "#2b2d3c", zIndex: "100", width: "430px", height: "107px", marginRight: "auto", marginLeft: "auto", marginTop: "0px", marginBottom: "0px", paddingTop: "50px" }} >
+            <Link href='/'>
+              <img style={{
+                width: "137px", height: "24px", marginLeft: "16px", marginRight: "45px", marginTop: "8px"
+              }}
+                src='/logo.svg'
+                alt='logo'
+              />
+            </Link>
+            <button type='button' className='relative flex flex-row justify-center text-white rounded-md shadow-sm' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", marginTop: "0px", fontSize: "16px", lineHeight: "12px", height: "40px", padding: "14px 25px" }}>
+              LAUNCH APP
+            </button>
+            <button><img src='/landingpage/list.svg' style={{ marginLeft: "26.5px", width: "32px" }} onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)} />
+            </button>
+          </navbar>
+          {drawMobileMenu()}
+          {drawBackground()}
+        </>
+      )
+    }
+  }
 
-  )
+  return drawScreen();
+
+
+
 }

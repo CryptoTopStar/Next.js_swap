@@ -9,7 +9,7 @@ export default function chartVolumePage() {
             <ChartHeader />
             <ChartButtons />
             <ChartContentItem />
-            <BuyNftList />
+
         </>
     )
 }

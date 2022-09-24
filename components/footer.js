@@ -1,20 +1,70 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
+
 export default function Footer() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   useEffect(() => {
     window.addEventListener('resize', () => {
       console.log(window.innerWidth)
-      if (window.innerWidth > 1024) {
+      if (screen.width > 429) {
         setMobileMenuIsOpen(false);
+        setDesktop(true);
       }
-      if (window.innerWidth < 1024) {
+      if (screen.width < 429) {
         setMobileMenuIsOpen(true);
+        setDesktop(false);
       }
 
     })
   }, []);
+  const [desktop, setDesktop] = useState(false)
+  const drawScreen = () => {
+    if (desktop) {
+      return (
+        <>
+          <section className='flex flex-wrap items-center justify-between' style={{ width: "1440px", margin: "auto", padding: "40px 70px", background: "#37394d" }}>
+            <div>
+              <Link href='/'>
+                <Image
+                  className='p-0 m-0'
+                  src='/logo.svg'
+                  width={145}
+                  height={50}
+                  priority
+                  alt='logo'
+                />
+              </Link>
+            </div>
+            {drawUl()}
+            <button type='button' className='items-center' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", padding: "22px 76px", borderRadius: "10px", fontWeight: "600" }}>LAUNCH APP </button>
+          </section>
+        </>
+      )
+    }
+    if (!desktop) {
+      return (
+
+        <section className='flex flex-wrap items-center justify-between' style={{ width: "430px", margin: "0", padding: "18px", background: "#37394d" }}>
+
+          <Link href='/'>
+            <Image
+              className='p-0 m-0'
+              src='/logo.svg'
+              width={145}
+              height={50}
+              priority
+              alt='logo'
+            />
+          </Link>
+          <button><img src='/landingpage/list.svg' style={{ marginLeft: "26.5px", width: "32px" }} onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)} />
+          </button>
+
+        </section>
+      )
+    }
+
+  }
   const drawUl = () => {
     if (!mobileMenuIsOpen)
       return (
@@ -77,24 +127,5 @@ export default function Footer() {
         </ul>
       )
   }
-  return (
-    <>
-      <section className='flex flex-wrap items-center justify-between desktop:px-72 desktop:pr-72 laptop:px-8 laptop:pr-8 tablet:px-8 tablet:pr-8 phone:px-4 phone:pr-4'>
-        <div>
-          <Link href='/'>
-            <Image
-              className='p-0 m-0'
-              src='/logo.svg'
-              width={145}
-              height={50}
-              priority
-              alt='logo'
-            />
-          </Link>
-        </div>
-        {drawUl()}
-        <button type='button' className='items-center px-10 py-2 font-medium text-white rounded-md shadow-sm md:inline-flex desktop:text-xl laptop:text-lg tablet:text-base phone:text-tiny' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)" }}>LAUNCH APP </button>
-      </section>
-    </>
-  )
+  return drawScreen()
 }

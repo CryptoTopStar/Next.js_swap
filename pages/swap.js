@@ -4,7 +4,7 @@ import Whitebackground from "../components/swap/whitebackground";
 export default function swapPage() {
   return (
     <>
-      <Market />
+      <Market marginleft='294px' />
       <Whitebackground />
       <Modal />
     </>

@@ -1,75 +1,296 @@
+import { useEffect, useState } from "react"
 const Table = () => {
-    return (
-        <table className="w-full ">
-            <tr className="text-white bg-37394d">
-                <th>Type</th>
-                <th>Quantity</th>
-                <th>Av. Price</th>
-                <th>Tx</th>
-            </tr>
-            <tr className="bg-2b4237 ">
-                <td className="text-center">Buy</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className=" bg-402936">
-                <td className="text-center">Sell</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className="bg-2b4237 ">
-                <td className="text-center">Buy</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className=" bg-402936">
-                <td className="text-center">Sell</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className="bg-2b4237 ">
-                <td className="text-center">Buy</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className=" bg-402936">
-                <td className="text-center">Sell</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className="bg-2b4237 ">
-                <td className="text-center">Buy</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className=" bg-402936">
-                <td className="text-center">Sell</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className="bg-2b4237 ">
-                <td className="text-center">Buy</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
-            <tr className=" bg-402936">
-                <td className="text-center">Sell</td>
-                <td className="text-center">6</td>
-                <td className="text-center">0.00001</td>
-                <td className="flex justify-center"><img src='/charts/charm_link-external.svg' /></td>
-            </tr>
+    const [desktop, setDesktop] = useState(false)
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                console.log(desktop)
+            }
+            if (screen.width < 429) {
+                setDesktop(false);
+                console.log(desktop)
+            }
 
-        </table>
-    )
+        })
+    }, []);
+    const drawScreen = () => {
+        if (desktop) {
+            return (
+                <>
+                    <div className="flex flex-row justify-center" style={{ height: "45px", background: "#37394d" }}>
+                        <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Type</div>
+                        <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Quantity</div>
+                        <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Av.Price</div>
+                        <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Tx</div>
+                    </div>
+                    <div style={{ height: "585px", overflowY: "auto" }}>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "120px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+
+                    </div>
+                </>
+            )
+
+        }
+        if (!desktop) {
+            return (
+                <>
+                    <div className="flex flex-row justify-center" style={{ height: "45px", background: "#37394d", width: "400px", marginTop: "20px", marginLeft: "15px" }}>
+                        <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Type</div>
+                        <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Quantity</div>
+                        <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Av.Price</div>
+                        <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "500", textAlign: "center", paddingTop: "13px" }}>Tx</div>
+                    </div>
+                    <div style={{ height: "380px", overflowY: "auto", marginLeft: "15px", width: "400px", marginBottom: "20px" }}>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(41, 255, 6, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Buy</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+                        <div className="flex flex-row justify-center" style={{ height: "45px", background: "rgba(249, 1, 1, 0.1)" }}>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>Sell</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>6</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}>0.00001</div>
+                            <div style={{ width: "100px", height: "46px", fontSize: "16px", fontWeight: "400", textAlign: "center", paddingTop: "13px" }}><center><img src='/charts/charm_link-external.svg' /></center></div>
+                        </div>
+
+
+                    </div>
+                </>
+            )
+
+        }
+    }
+    return drawScreen()
 
 }
 export default Table
