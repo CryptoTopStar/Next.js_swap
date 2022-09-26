@@ -5,7 +5,6 @@ export default function swapPage() {
   return (
     <>
       <Market marginleft='294px' />
-      <Whitebackground />
       <Modal />
     </>
   )

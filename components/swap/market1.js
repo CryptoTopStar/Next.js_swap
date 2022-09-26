@@ -24,7 +24,7 @@ const Market1 = () => {
         }
     }
     return (
-        <section className="" style={{ background: "#2c2d3c", width: "1440px", height: "270px", margin: "auto", marginTop: "0px", paddingTop: "60px" }}>
+        <section className="" style={{ background: "#2c2d3c", width: "1440px", height: "270px", margin: "auto", marginTop: "-74px", paddingTop: "60px" }}>
             <div className="relative flex flex-row items-center" style={{ marginLeft: "70px", height: "28px", width: "fit-content" }} >
                 <img src={data[index].src} style={{ display: "inline-flex", height: "28px", marginRight: "8px" }} />
                 <p className="text-white" style={{ display: "inline-flex", fontSize: "32px" }} > {data[index].name} Market</p>

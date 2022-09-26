@@ -3,15 +3,23 @@ import { useEffect, useState } from "react"
 const RankingTable = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
-            console.log(desktop)
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-            console.log(desktop)
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (desktop) {

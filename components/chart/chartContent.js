@@ -4,33 +4,46 @@ import { useEffect, useState } from "react"
 const ChartContent = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
-            console.log(desktop)
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-            console.log(desktop)
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (!desktop) {
             return (
-                <section className="flex flex-col bg-b-body ">
+               
+                <section style={{width:"430px" , margin:"auto"}} className=" bg-b-body">
+                <div className="flex flex-col bg-b-body ">
                     <div style={{ width: "400px", height: "250px", padding: "15px" }}>
                         <ChartItem />
                     </div>
                     <div className="">
                         <Table />
                     </div>
+                </div>
                 </section>
+             
             )
 
         }
         if (desktop) {
             return (
-                <section className="flex bg-b-body desktop:flex-row ">
+                <div className="w-full bg-b-body">
+                <section className="flex bg-b-body desktop:flex-row " style={{ width:"1440px", margin:"auto"}}>
                     <div style={{ width: "947px", height: "663px", paddingTop: "11px" }}>
                         <ChartItem />
                     </div>
@@ -38,6 +51,7 @@ const ChartContent = () => {
                         <Table />
                     </div>
                 </section>
+                </div>
             )
 
         }

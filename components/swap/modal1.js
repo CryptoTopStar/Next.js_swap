@@ -2,18 +2,28 @@ import { useEffect, useState } from "react";
 const Modal1 = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section className="m-auto bg-transparent rounded-lg" style={{ position: "absolute", width: "1440px", top: "276px", paddingLeft: "290px", paddingRight: "290px" }}>
+                <div className="w-full">
+                <section className="m-auto bg-transparent rounded-lg" style={{ width: "1440px", marginTop: "-74px", paddingLeft: "290px", paddingRight: "290px" }}>
                     <div className="relative bg-white rounded" style={{ padding: "60px", boxShadow: "0px 10px 20px rgba(47, 49, 66, 0.1)" }}>
                         <div>
                             <p className="font-bold" style={{ color: "#2b2d3c", fontSize: "32px", marginBottom: "6px" }}>EXCHANGE</p>
@@ -54,6 +64,7 @@ const Modal1 = () => {
                         <img src='/navbar/settings.svg' onClick={() => setSettingButton(!settingButton)} style={{ position: "absolute", top: "34px", right: "34px", height: "28px" }}></img>
                     </div>
                 </section >
+                </div>
             )
 
         }

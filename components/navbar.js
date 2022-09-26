@@ -4,23 +4,53 @@ import cn from 'classnames'
 import Image from 'next/image'
 import ToggleBox from './navbar/toggleBox'
 import Background from './swap/background'
+import { useMediaQuery } from 'react-responsive'
 
 export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
   const [connectWalletButton, setConnectWalletButton] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [desktop, setDesktop] = useState(false)
+  const [width, setWidth] = useState('430px');
+  let isDesktopOrLaptop = useMediaQuery({
+    minWidth: 1440
+  })
+  let isLaptopOrMobile = useMediaQuery({
+    minWidth: 430
+  })
+  const drawstyle = () =>{
+    if(isDesktopOrLaptop && isLaptopOrMobile ){
+      setWidth('100vw')
+    }
+    if(!isDesktopOrLaptop && isLaptopOrMobile ){
+      setWidth('1440px')
+    }
+    if(!isLaptopOrMobile && !isDesktopOrLaptop){
+      setWidth('430px')
+    }
+  }
+  console.log("desktop:",isDesktopOrLaptop)
+  console.log("laptop:",isLaptopOrMobile)
   useEffect(() => {
-    console.log(screen.width)
-    if (screen.width > 429) {
-      setDesktop(true);
-      console.log(desktop)
+    function handleResize() {
+      // console.log(screen.width)
+      if (screen.width > 429) {
+        setDesktop(true);
+        // console.log(desktop)
+      }
+      if (screen.width < 429) {
+        // console.log("ok")
+        setDesktop(false);
+        // console.log(desktop)
+      }
     }
-    if (screen.width < 429) {
-      setDesktop(false);
-      console.log(desktop)
-    }
+    window.addEventListener('resize', handleResize)
+    handleResize();
+    drawstyle()
   }, []);
+  useEffect(() => {
+    drawstyle()
+  }, [isDesktopOrLaptop, isLaptopOrMobile])
   const dropWalletBox = () => {
     if (connectWalletButton) {
       return <ToggleBox />;
@@ -152,40 +182,38 @@ export default function Header() {
       )
     }
   }
-
-
-  console.log(connectWalletButton);
   const drawScreen = () => {
     if (desktop) {
       return (
-        <>
-          <navbar className="border-b-2 bg-b-body border-b-text" style={{ background: "#2b2d3c", zIndex: "100", width: "1440px", height: "80px", marginRight: "auto", marginLeft: "auto", marginTop: "0px", marginBottom: "0px" }} >
-            <Link href='/'>
-              <img style={{
-                marginLeft: "70px", width: "160px", height: "28px", marginRight: "0px", display: "inline"
-              }}
-                src='/logo.svg'
-                alt='logo'
-              />
-            </Link>
-            {drawDesktopUl()}
-            <button
-              type='button'
-              className='relative flex flex-row items-center text-white rounded-md shadow-sm'
-              style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", float: "right", marginRight: "70px", marginTop: "12px", padding: "18px 32px 18px 16px", paddingTop: "18px", fontSize: "16px" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
-              01x3290...4454<img src='navbar/white_caret.svg' style={{ marginLeft: "12px", }} />
-              {dropWalletBox()}
-            </button>
-            {drawDropdownButton()}
+          <navbar className="m-auto border-b-2 bg-b-body border-b-text" style={{ width: width, borderBottom:"solid #f1f1f3 1px"}}>
+            <div style={{ background: "#2b2d3c", zIndex: "100", width: "1440px", height: "80px", marginRight: "auto", marginLeft: "auto", marginTop: "0px", marginBottom: "0px" }} >
+              <Link href='/'>
+                <img style={{
+                  marginLeft: "70px", width: "160px", height: "28px", marginRight: "0px", display: "inline"
+                }}
+                  src='/logo.svg'
+                  alt='logo'
+                />
+              </Link>
+              {drawDesktopUl()}
+              <button
+                type='button'
+                className='relative flex flex-row items-center text-white rounded-md shadow-sm'
+                style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", float: "right", marginRight: "70px", marginTop: "12px", padding: "18px 32px 18px 16px", paddingTop: "18px", fontSize: "16px" }} onClick={() => setConnectWalletButton(!connectWalletButton)}>
+                01x3290...4454<img src='navbar/white_caret.svg' style={{ marginLeft: "12px", }} />
+                {dropWalletBox()}
+              </button>
+              {drawDropdownButton()}
+            </div>
+            {drawBackground()}
           </navbar>
-          {drawBackground()}</>
       )
 
     }
     if (!desktop) {
       return (
         <>
-          <navbar className="flex flex-row items-center bg-b-body" style={{ background: "#2b2d3c", zIndex: "100", width: "430px", height: "107px", marginRight: "0", marginLeft: "0", marginTop: "0px", marginBottom: "0px", paddingTop: "50px" }} >
+          <navbar className="flex flex-row items-center m-auto bg-b-body" style={{ background: "#2b2d3c", zIndex: "100", width: "430px", height: "107px", marginRight: "0", marginLeft: "0", marginTop: "0px", marginBottom: "0px", paddingTop: "50px" }} >
             <Link href='/'>
               <img style={{
                 width: "137px", height: "24px", marginLeft: "16px", marginRight: "45px", marginTop: "8px"

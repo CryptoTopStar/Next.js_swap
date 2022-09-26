@@ -2,19 +2,29 @@ import { useEffect, useState } from "react"
 const Configuration = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
-        }
-        if (screen.width < 429) {
-            setDesktop(false);
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
 
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section style={{ position: "absolute", top: "276px", marginLeft: "181px", width: "1080px", background: "white", borderRadius: "10px" }}>
+                <section style={{width:"1440px" , margin:"auto"}}>
+                <div style={{ position: "absolute", top: "276px", marginLeft: "181px", width: "1080px", background: "white", borderRadius: "10px" }}>
                     <div className="flex flex-row" style={{ borderBottom: "solid #e4e4e5 0.5px" }}>
                         <img src='/swap/arrowLeft.svg' style={{ width: "18.55px", marginLeft: "32.5px", marginTop: "77.3px", marginBottom: "30px" }} />
                         <div style={{ marginLeft: "65px", marginTop: "62px", marginBottom: "20px" }}>
@@ -99,12 +109,13 @@ const Configuration = () => {
 
                         </div>
                     </div>
-                </section >
+                </div >
+                </section>
             )
         }
         if (!desktop) {
             return (
-                <section style={{ position: "absolute", top: "296px", marginLeft: "15px", width: "400px", background: "white", borderRadius: "10px" }}>
+                <section style={{ position:"absolute" ,top: "290px", marginLeft: "15px", width: "400px", background: "white", borderRadius: "10px" }}>
                     <div className="flex flex-row border-b-2">
                         <img src='/swap/arrowLeft.svg' style={{ width: "18.55px", marginLeft: "19px", marginTop: "46.3px", marginBottom: "30px" }} />
                         <div style={{ marginLeft: "19px", marginTop: "32px", marginBottom: "20px" }}>

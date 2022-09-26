@@ -2,20 +2,30 @@ import { useEffect, useState } from "react";
 const ChartContentPool = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
-            console.log(desktop)
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-            console.log(desktop)
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section className="flex flex-row bg-b-body" style={{ padding: "40px 70px" }}>
+                <div className="w-full bg-b-body">
+                <section style={{width:"1440px" , margin:"auto"}} className=" bg-b-body">
+                <div className="flex flex-row bg-b-body" style={{ padding: "40px 70px" }}>
                     <div style={{ width: "310px" }}>
                         <p className="text-f1f1f3" style={{ fontSize: "24px", fontWeight: "500", lineHeight: "18px" }}>Pool Type</p>
                         <div className="flex flex-row justify-between w-full bg-42455c" style={{ marginTop: "24px", padding: "22px 24px 22px 24px", borderRadius: "10px" }}>
@@ -143,7 +153,9 @@ const ChartContentPool = () => {
                             </div>
                         </div>
                     </div>
-                </section >
+                </div >
+                </section>
+                </div>
             )
 
         }

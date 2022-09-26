@@ -3,21 +3,29 @@ import { useState, useEffect } from "react"
 const ValidPairModal = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-        }
 
-
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section className="flex flex-col justify-center m-auto bg-white rounded-md shadow-lg shadow-indigo-500/50 " style={{ position: "absolute", top: "382px", marginLeft: "400px", width: "640px", borderRadius: "20px" }}>
+                <section style={{width:"1440px" , margin:"auto"}}>
+                <div className="flex flex-col justify-center m-auto bg-white rounded-md shadow-lg shadow-indigo-500/50 " style={{ position: "absolute", top: "382px", marginLeft: "400px", width: "640px", borderRadius: "20px" }}>
                     <div style={{ padding: "32px 24px" }}>
                         <p className=" text-b-body" style={{ fontSize: "20px", lineHeight: "24px", fontWeight: "700", marginBottom: "15px" }}>Your Liquidity</p>
                         <p className="text-b-text" style={{ fontSize: "16px", lineHeight: "11x" }}>Receive LP tokens and earn 0.17% trading fees</p>
@@ -48,6 +56,7 @@ const ValidPairModal = () => {
                     <div className=" text-737373" style={{ padding: "20px 24px", background: "#f3f3f5", color: "#737373" }}>
                         By adding liquidity you'll earn 0.17% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.
                     </div>
+                </div>
                 </section>
             )
         }

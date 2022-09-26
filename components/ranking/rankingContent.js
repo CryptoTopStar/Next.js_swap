@@ -3,20 +3,29 @@ import RankingTable from "./rankingTable"
 const RankingContent = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
-            console.log(desktop)
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-            console.log(desktop)
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section className="mx-auto mr-auto bg-f1f1f3 margin-t-0 margin-b-0">
+                <section style={{width:"1440px" , margin:"auto"}}>
+                <div className="mx-auto mr-auto bg-f1f1f3 margin-t-0 margin-b-0">
                     <p className="font-bold text-b-text" style={{ paddingTop: "100px", paddingLeft: "70px", fontSize: "32px", fontWeight: "700" }}> Collection</p>
                     <div className="flex flex-row justify-between" style={{ paddingTop: "64px", paddingLeft: "70px", paddingRight: "70px", borderBottom: "solid #e4e4e5 1px", paddingBottom: "24px" }}>
                         <div className="flex flex-row" >
@@ -40,7 +49,8 @@ const RankingContent = () => {
                         <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 50</button>
                         <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> <img src='/ranking/arrow.svg' style={{ width: "16px" }} /></button>
                     </div>
-                </section >
+                </div >
+                </section>
             )
         }
         if (!desktop) {

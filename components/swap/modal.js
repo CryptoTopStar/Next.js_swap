@@ -27,18 +27,28 @@ const Modal = () => {
         setSelectTokenModal(!selectTokenModal);
     }
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section className="m-auto bg-transparent rounded-lg" style={{ position: "absolute", width: "1440px", top: "276px", paddingLeft: "290px", paddingRight: "290px" }}>
+                <div style={{ width:"full"}}>
+                <section className="m-auto bg-transparent rounded-lg" style={{ width: "1440px", paddingtop: "0px", paddingLeft: "290px", paddingRight: "290px", marginTop:"-74px" }}>
                     <div className="relative bg-white rounded" style={{ padding: "60px", boxShadow: "0px 10px 20px rgba(47, 49, 66, 0.1)" }}>
                         <div>
                             <p className="font-bold" style={{ color: "#2b2d3c", fontSize: "32px", marginBottom: "6px" }}>EXCHANGE</p>
@@ -65,12 +75,13 @@ const Modal = () => {
                         {drawSelectTokenModal()}
                     </div>
                 </section>
+                </div>
             )
 
         }
         if (!desktop) {
             return (
-                <section className="bg-transparent rounded-lg " style={{ position: "absolute", width: "430px", top: "295px", paddingLeft: "15px", paddingRight: "15px" }}>
+                <section className="bg-transparent rounded-lg " style={{width: "430px", marginTop: "20px", paddingLeft: "15px", paddingRight: "15px", marginBottom:"20px" }}>
                     <div className="relative bg-white rounded" style={{ padding: "24px 16px", boxShadow: "0px 10px 20px rgba(47, 49, 66, 0.1)" }}>
                         <div>
                             <p className="font-bold" style={{ color: "#2b2d3c", fontSize: "24px", marginBottom: "6px" }}>EXCHANGE</p>

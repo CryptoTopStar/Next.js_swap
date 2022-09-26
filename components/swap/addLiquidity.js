@@ -5,18 +5,29 @@ import { useEffect, useState } from "react"
 const AddLiquidity = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
-        if (screen.width < 429) {
-            setDesktop(false);
-        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize();
+        drawScreen()
     }, []);
     const drawScreen = () => {
         if (desktop) {
             return (
-                <section style={{ position: "absolute", width: "1440px", top: "370px", paddingLeft: "400px", paddingRight: "400px" }}>
+                <section style={{width:"1440px" , margin:"auto"}}>
+                <div style={{ position: "absolute", width: "1440px", top: "370px", paddingLeft: "400px", paddingRight: "400px" }}>
                     <div style={{ background: "white", padding: "60px", borderRadius: "20px" }}>
                         <div >
                             <p className="font-bold text-b-body" style={{ fontSize: "20px", lineHeight: "24px", marginBottom: "16px" }}>Your Liquidity</p>
@@ -31,6 +42,7 @@ const AddLiquidity = () => {
                         </div>
                         <button type='button' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", margin: "28px 50px 0px 50px", padding: "19px 130px 19px 130px", fontSize: "20px", borderRadius: "10px" }}>ADD LIQUIDITY</button>
                     </div>
+                </div>
                 </section>
             )
         }

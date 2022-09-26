@@ -3,20 +3,28 @@ import { useEffect, useState } from "react"
 const LandingPage = () => {
     const [desktop, setDesktop] = useState(false)
     useEffect(() => {
-        console.log(screen.width)
-        if (screen.width > 429) {
-            setDesktop(true);
-            console.log(desktop)
-        }
-        if (screen.width < 429) {
-            setDesktop(false);
-            console.log(desktop)
+        console.log("-----userEffect-----");
+        function handleResize() {
+            // console.log(screen.width)
+            if (screen.width > 429) {
+                setDesktop(true);
+                // console.log(desktop)
+            }
+            if (screen.width < 429) {
+                // console.log("ok")
+                setDesktop(false);
+                // console.log(desktop)
+            }
         }
 
+        window.addEventListener('resize', handleResize)
+        handleResize();
     }, []);
+   const drawScreen = () =>{
     if (desktop) {
         return (
-            <section className="relative bg-1d1d28" style={{ width: "1440px", marginLeft: "auto", marginRight: "auto", marginTop: "0px" }}>
+            <section className="bg-1d1d28" style={{ width:"100vw"}}>
+            <div className="relative bg-1d1d28" style={{ width: "1440px", marginLeft: "auto", marginRight: "auto", marginTop: "0px" }}>
                 <p className="smells_good" style={{ paddingTop: "229px", width: "810px", marginLeft: "auto", textAlign: "center", marginRight: "auto", fontSize: "64px", fontWeight: "700" }}>Something Smells Good</p>
                 <img src='/landingpage/text_background.svg' className="m-auto" style={{ marginTop: "-70px" }} />
                 <img src='/landingpage/curve.svg' className="m-auto" style={{ marginTop: "30px" }} />
@@ -58,12 +66,14 @@ const LandingPage = () => {
                         <p className='smells_good ' style={{ marginLeft: "25px", fontSize: "32px", fontWeight: "700" }}>TWITTER</p>
                     </div>
                 </div>
+            </div>
             </section>
         )
     }
     if (!desktop)
         return (
-            <section className="relative bg-1d1d28" style={{ width: "430px", marginLeft: "auto", marginRight: "auto", marginTop: "0px" }}>
+            <section className="bg-1d1d28" style={{ width:"100vw"}}>
+            <div className="relative bg-1d1d28" style={{ width: "430px", marginLeft: "auto", marginRight: "auto", marginTop: "0px" }}>
                 <p className="smells_good" style={{ paddingTop: "100px", width: "347px", marginLeft: "auto", textAlign: "center", marginRight: "auto", fontSize: "28px", fontWeight: "700" }}>Something Smells Good</p>
                 <img src='/landingpage/text_background.svg' className="m-auto" style={{ marginTop: "-30px" }} />
                 <img src='/landingpage/curve.svg' className="m-auto" style={{ marginTop: "30px" }} />
@@ -109,8 +119,11 @@ const LandingPage = () => {
                         <p className='smells_good ' style={{ marginLeft: "16px", fontSize: "24px", fontWeight: "700" }}>TWITTER</p>
                     </div>
                 </div>
+            </div>
             </section>
         )
+   }
+   return drawScreen()
 
 
 }

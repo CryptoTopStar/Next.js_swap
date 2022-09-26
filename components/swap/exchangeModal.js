@@ -26,34 +26,35 @@ const ExchangeModal = () => {
         setSelectTokenModal(!selectTokenModal);
     }
     return (
-        <>
-            <section className="m-auto bg-transparent rounded-lg" style={{ position: "absolute", width: "1440px", top: "276px", paddingLeft: "70px", width: "920px" }}>
-                <div className="relative bg-white rounded" style={{ padding: "60px", boxShadow: "0px 10px 20px rgba(47, 49, 66, 0.1)" }}>
-                    <div>
-                        <p className="font-bold" style={{ color: "#2b2d3c", fontSize: "32px", marginBottom: "6px" }}>EXCHANGE</p>
-                        <p style={{ color: "#494d66", fontSize: "20px" }}>SWAP NFT FOR TOKENS</p>
+            <section style={{width:"1440px" , margin:"auto"}}>
+                <div className="m-auto bg-transparent" style={{ marginTop: "-70px", marginLeft: "70px",paddingBottom:"205px", width: "860px" }}>
+                    <div className="relative bg-white" style={{ padding: "60px", boxShadow: "0px 10px 20px rgba(47, 49, 66, 0.1)" , borderRadius:"10px"}}>
+                        <div>
+                            <p className="font-bold" style={{ color: "#2b2d3c", fontSize: "32px", marginBottom: "6px" }}>EXCHANGE</p>
+                            <p style={{ color: "#494d66", fontSize: "20px" }}>SWAP NFT FOR TOKENS</p>
+                        </div>
+                        <div className="flex flex-row items-center justify-between rounded-md" style={{ border: "solid #494d66 0.5px", marginTop: "40px", padding: "30px" }}>
+                            <input className="w-2/3 text-black bg-transparent focus:outline-none" type="text" placeholder="0.1" style={{ fontSize: "32px", padding: "2px" }} />
+                            <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
+                                <img src="/swap/swapEther.svg" style={{ height: "24px", marginRight: "8px" }} />
+                                <p style={{ color: "#2b2d3c", fontSize: "20px", marginRight: "15px" }}>Eth</p>
+                                <img src="/swap/vectorBlack.svg" style={{ width: "14px" }} /></button>
+                        </div>
+                        <center><img src="/swap/vectorBlack.svg" style={{ marginTop: "18px", width: "14px" }} /></center>
+                        <div className="flex flex-row items-center justify-between rounded-md" style={{ border: "solid #494d66 0.5px", marginTop: "18px", padding: "30px" }}>
+                            <input className="w-2/3 text-black bg-transparent focus:outline-none" type="text" placeholder="0.1" style={{ fontSize: "32px", padding: "2px" }} />
+                            <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
+                                <img src="/swap/swapEther.svg" style={{ height: "24px", marginRight: "8px" }} />
+                                <p style={{ color: "#2b2d3c", fontSize: "20px", marginRight: "15px" }}>Eth</p>
+                                <img src="/swap/vectorBlack.svg" style={{ width: "14px" }} /></button>
+                        </div>
+                        <button type='button' className='w-full font-medium text-white rounded-md' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", marginTop: "44px", padding: "28px 272px", fontSize: "20px" }}>CONNECT WALLET</button>
+                        {settingModal()}
+                        {drawSelectTokenModal()}
                     </div>
-                    <div className="flex flex-row items-center justify-between rounded-md" style={{ border: "solid #494d66 0.5px", marginTop: "40px", padding: "30px" }}>
-                        <input className="w-2/3 text-black bg-transparent focus:outline-none" type="text" placeholder="0.1" style={{ fontSize: "32px", padding: "2px" }} />
-                        <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
-                            <img src="/swap/swapEther.svg" style={{ height: "24px", marginRight: "8px" }} />
-                            <p style={{ color: "#2b2d3c", fontSize: "20px", marginRight: "15px" }}>Eth</p>
-                            <img src="/swap/vectorBlack.svg" style={{ width: "14px" }} /></button>
-                    </div>
-                    <center><img src="/swap/vectorBlack.svg" style={{ marginTop: "18px", width: "14px" }} /></center>
-                    <div className="flex flex-row items-center justify-between rounded-md" style={{ border: "solid #494d66 0.5px", marginTop: "18px", padding: "30px" }}>
-                        <input className="w-2/3 text-black bg-transparent focus:outline-none" type="text" placeholder="0.1" style={{ fontSize: "32px", padding: "2px" }} />
-                        <button className="flex flex-row items-center rounded-lg" style={{ border: "solid #b8bacc 0.5px", padding: "18px 15px 18px 13px" }} onClick={() => setSelectTokenModal(!selectTokenModal)}>
-                            <img src="/swap/swapEther.svg" style={{ height: "24px", marginRight: "8px" }} />
-                            <p style={{ color: "#2b2d3c", fontSize: "20px", marginRight: "15px" }}>Eth</p>
-                            <img src="/swap/vectorBlack.svg" style={{ width: "14px" }} /></button>
-                    </div>
-                    <button type='button' className='w-full font-medium text-white rounded-md' style={{ backgroundImage: "linear-gradient(to right, #F506FE , #06D6DF)", marginTop: "44px", padding: "28px 272px", fontSize: "20px" }}>CONNECT WALLET</button>
-                    {settingModal()}
-                    {drawSelectTokenModal()}
                 </div>
             </section>
-        </>
+
     )
 }
 

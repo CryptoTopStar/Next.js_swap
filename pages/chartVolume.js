@@ -5,6 +5,7 @@ import Header from "../components/navbar"
 export default function chartVolumePage() {
     return (
         <>
+        
             <ChartHeader />
             <ChartButtons />
             <ChartContent />
