@@ -33,21 +33,21 @@ const RankingContent = () => {
                             <button className="flex flex-row items-center border-2 border-989bb4 text-323546" style={{ padding: "10px 16px 10px 16px", fontSize: "16px", lineHeight: "19.5px", borderRadius: "10px", background: "#fafafa" }}>All Chains <img src='/ranking/select_caret.svg' style={{ marginLeft: "14.3px" }} /></button>
                         </div>
                         <div className="flex flex-row">
-                            <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>24h</p></button>
-                            <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>7d</p></button>
-                            <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>30d</p></button>
-                            <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>all</p></button>
+                            <button className=" gradient" style={{ marginRight: "12px",}}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>24h</p></button>
+                            <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa", borderWidth:"0.5px"  }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>7d</p></button>
+                            <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa", borderWidth:"0.5px"  }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500"}}>30d</p></button>
+                            <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa", borderWidth:"0.5px"  }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500"}}>all</p></button>
                         </div>
                     </div>
                     <RankingTable />
                     <div className="flex flex-row justify-center" style={{ paddingBottom: "80px" }}>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 1</button>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 2</button>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 3</button>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 4</button>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 5</button>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> 50</button>
-                        <button className="rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 1px", marginRight: "12px" }}> <img src='/ranking/arrow.svg' style={{ width: "16px" }} /></button>
+                        <button className="bg-white gradient" style={{  marginRight: "12px" }}><p style={{fontSize: "18px", padding: "4px 11px", color:"#323546"}}>1</p> </button>
+                        <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 0.5px", marginRight: "12px" }}> 2</button>
+                        <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 0.5px", marginRight: "12px" }}> 3</button>
+                        <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 0.5px", marginRight: "12px" }}> 4</button>
+                        <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 0.5px", marginRight: "12px" }}> 5</button>
+                        <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 0.5px", marginRight: "12px" }}> 50</button>
+                        <button className="bg-white rounded-md text-323546 border-989bb4" style={{ fontSize: "18px", padding: "4px 11px", border: "solid #9296ae 0.5px", marginRight: "12px" }}> <img src='/ranking/arrow.svg' style={{ width: "16px" }} /></button>
                     </div>
                 </div >
                 </section>
@@ -63,7 +63,7 @@ const RankingContent = () => {
                             <button className="flex flex-row items-center border-2 border-989bb4 text-323546" style={{ padding: "10px 16px 10px 16px", fontSize: "16px", lineHeight: "19.5px", borderRadius: "10px", background: "#fafafa" }}>All Chains <img src='/ranking/select_caret.svg' style={{ marginLeft: "14.3px" }} /></button>
                         </div>
                         <div className="flex flex-row">
-                            <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>24h</p></button>
+                        <button className=" gradient" style={{ marginRight: "12px",}}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>24h</p></button>
                             <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>7d</p></button>
                             <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>30d</p></button>
                             <button className="border-2 rounded-md text-323546 border-989bb4" style={{ fontSize: "16px", marginRight: "12px", background: "#fafafa" }}><p style={{ padding: "10px", color: "#323546", fontWeight: "500" }}>all</p></button>

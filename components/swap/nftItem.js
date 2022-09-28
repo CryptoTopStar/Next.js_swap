@@ -1,9 +1,9 @@
-const NftItem = ({ src }) => {
+const NftItem = ({ src , width}) => {
     return (
         <div className="flex flex-row items-center rounded nftitem" style={{ marginBottom: "16px" }}>
             <div className="flex flex-row items-center">
                 <img src={src} className="" style={{ width: "80px", height: "76px", borderRadius: "5px" }} />
-                <div className="flex flex-col" style={{ marginLeft: "14px", width: "212px" }}>
+                <div className="flex flex-col" style={{ marginLeft: "14px", width: width }}>
                     <p style={{ fontSize: "18px", lineHeight: "22px", color: "#323446", marginBottom: "8px" }}>CloneX-XTas...</p>
                     <p style={{ fontSize: "20px", lineHeight: "25px", fontWeight: "700", color: "#494d66" }}>#1</p>
                 </div>

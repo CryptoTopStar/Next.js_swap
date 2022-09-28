@@ -23,7 +23,7 @@ const Modal1 = () => {
         if (desktop) {
             return (
                 <div className="w-full">
-                <section className="m-auto bg-transparent rounded-lg" style={{ width: "1440px", marginTop: "-74px", paddingLeft: "290px", paddingRight: "290px" }}>
+                <section className="m-auto bg-transparent rounded-lg" style={{ width: "1440px", marginTop: "-74px", paddingLeft: "290px", paddingRight: "290px", paddingBottom:"40px" }}>
                     <div className="relative bg-white rounded" style={{ padding: "60px", boxShadow: "0px 10px 20px rgba(47, 49, 66, 0.1)" }}>
                         <div>
                             <p className="font-bold" style={{ color: "#2b2d3c", fontSize: "32px", marginBottom: "6px" }}>EXCHANGE</p>

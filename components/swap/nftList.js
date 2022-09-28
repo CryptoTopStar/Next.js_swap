@@ -2,7 +2,7 @@
 import NftItem from "./nftItem"
 const Nftlist = () => {
     return (
-        <section style={{ width: "1440px", margin: "auto", position: "relative", zIndex: "100" }}>
+        <section style={{ width: "1440px", margin: "auto", position: "relative", zIndex: "40" }}>
             <div style={{ position: "absolute", bottom: "0px", right: "0px", background: "white", width: "490px", height: "850px", borderRadius: "10px" }}>
                 <div className="flex flex-row items-center" style={{ margin: "24px 16px" }}>
                     <p style={{ fontSize: "32px", lineHeight: "39px", color: "#494d66" }}>Buy 5 NFT's</p>
@@ -16,11 +16,11 @@ const Nftlist = () => {
                     <p style={{ marginLeft: "10px", width: "20px", color: "#2b2b2b", fontWeight: "700" }}>10.000</p>
                 </div>
                 <div style={{ margin: "32px 16px", height: "620px", overflowY: "auto" }}>
-                    <NftItem src='/swap/nftImage/turtle.svg' />
-                    <NftItem src='/swap/nftImage/leopard.svg' />
-                    <NftItem src='/swap/nftImage/frog.svg' />
-                    <NftItem src='/swap/nftImage/nemo.svg' />
-                    <NftItem src='/swap/nftImage/mouse.svg' />
+                    <NftItem src='/swap/nftImage/turtle.svg' width='212px' />
+                    <NftItem src='/swap/nftImage/leopard.svg' width='212px' />
+                    <NftItem src='/swap/nftImage/frog.svg'width='212px'/>
+                    <NftItem src='/swap/nftImage/nemo.svg' width='212px'/>
+                    <NftItem src='/swap/nftImage/mouse.svg' width='212px'/>
                     <NftItem src='/swap/nftImage/small.svg' />
 
                 </div>

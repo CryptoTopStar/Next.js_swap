@@ -1,14 +1,14 @@
 import Market from "../components/swap/market";
 import Configuration from "../components/swap/configuration";
 import Header from "../components/navbar";
-import Whitebackground1 from "../components/swap/whitebackground1";
+import Whitebackground2 from "../components/swap/whitebackground2";
 
 
 export default function swapPage() {
     return (
         <>
             <Market marginleft='294px' />
-            <Whitebackground1 />
+            <Whitebackground2 />
             <Configuration />
         </>
     )

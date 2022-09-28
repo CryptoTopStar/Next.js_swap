@@ -26,7 +26,7 @@ export default function Layout(props) {
   const drawmain = () => {
     {
       if (desktop) {
-        return (<main className="bg-f1f1f3">{props.children}</main>)
+        return (<main className=" bg-f1f1f3" >{props.children}</main>)
       }
       if (!desktop) {
         return (<main className="bg-f1f1f3">{props.children}</main>)
@@ -61,7 +61,7 @@ export default function Layout(props) {
  
   return (
     <>
-      <div className="min-h-screen mx-auto mr-auto" style={{width: width}}>
+      <div className="min-h-screen mx-auto mr-auto overflow-x-hidden" style={{width: width}}>
         <Navbar />
         {drawmain()}
         <Footer />

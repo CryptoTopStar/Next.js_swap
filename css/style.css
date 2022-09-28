@@ -14,6 +14,7 @@ body {
   font-weight: 400;
   scroll-behavior: smooth;
   color: #f1f1f1;
+  overflow-x:hidden
 }
 
 h1 {
@@ -499,4 +500,13 @@ th,td{
                     linear-gradient(to right, #FA02FF, #06D6Df);
   background-origin: border-box;
   background-clip: content-box, border-box;
+}
+.gradient{
+  border: solid 1px transparent;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, white, white), 
+                    linear-gradient(to right, #FA02FF, #06D6Df);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
 }
